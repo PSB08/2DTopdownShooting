@@ -8,7 +8,7 @@ namespace Code.Scripts.Players
     {
         [SerializeField] private Rigidbody2D rigid2D;
 
-        public bool CanManualMovement { get; private set; } = true;
+        public bool CanManualMovement { get; set; } = true;
         private Vector2 _autoMovement;
 
         private float _moveSpeed = 8f;

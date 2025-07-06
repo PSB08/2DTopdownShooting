@@ -12,7 +12,6 @@ namespace Code.Scripts.Players.States
         public override void Enter()
         {
             base.Enter();
-            Debug.Log("Move Enter");
         }
 
         public override void Update()
