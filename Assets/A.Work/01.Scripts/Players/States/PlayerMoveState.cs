@@ -20,6 +20,13 @@ namespace Code.Scripts.Players.States
             Vector2 movementKey = _player.PlayerInput.MovementKey;
             
             _movement.SetMovementDirection(movementKey);
+            
+            if (movementKey.sqrMagnitude > 0.01f)
+            {
+                _animator.SetParam(MoveXHash, movementKey.x);
+                _animator.SetParam(MoveYHash, movementKey.y);
+            }
+            
             if (movementKey.magnitude < _inputThreshold)
                 _player.ChangeState("IDLE");
         }

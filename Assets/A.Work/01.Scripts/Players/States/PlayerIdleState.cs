@@ -20,8 +20,12 @@ namespace Code.Scripts.Players.States
             Vector2 movementKey = _player.PlayerInput.MovementKey;
             
             _movement.SetMovementDirection(movementKey);
-            if (movementKey.magnitude > _inputThreshold)
+            if (movementKey.magnitude > 0.01f)
+            {
+                _animator.SetParam(MoveXHash, movementKey.x);
+                _animator.SetParam(MoveYHash, movementKey.y);
                 _player.ChangeState("MOVE");
+            }
         }
         
     }
