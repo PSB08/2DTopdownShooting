@@ -16,6 +16,14 @@ namespace Code.Scripts.Players.States
         {
             base.Enter();
             _movement.CanManualMovement = false;
+            
+            Vector2 moveDir = _player.PlayerInput.MovementKey;
+            
+            if (moveDir.sqrMagnitude > 0.01f)
+            {
+                _animator.SetParam(MoveXHash, moveDir.x);
+                _animator.SetParam(MoveYHash, moveDir.y);
+            }
         }
         
         public override void Update()
