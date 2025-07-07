@@ -11,7 +11,6 @@ namespace Code.Scripts.Players
         public event Action OnAttackPressed;
 
         public Vector2 MovementKey { get; private set; }
-
         private Controls _controls;
 
         private void OnEnable()

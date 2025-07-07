@@ -5,11 +5,11 @@ namespace Code.Scripts.Players.States
 {
     public class PlayerAttackState : PlayerCanAttackState
     {
-        private PlayerAttackCompo attackCompo;
+        private PlayerAttackCompo _attackCompo;
         
         public PlayerAttackState(Entity entity, int animationHash) : base(entity, animationHash)
         {
-            attackCompo = entity.GetCompo<PlayerAttackCompo>();
+            _attackCompo = entity.GetCompo<PlayerAttackCompo>();
         }
 
         public override void Enter()
