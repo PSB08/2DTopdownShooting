@@ -20,12 +20,19 @@ namespace Code.Scripts.Entities
             _components = new Dictionary<Type, IEntityComponent>();
             AddComponents();
             InitializeComponents();
+            AfterInitialize();
         }
 
         protected virtual void Start()
         {
         }
 
+        protected virtual void AfterInitialize()
+        {
+            _components.Values.OfType<IAfterInitialize>().
+                ToList().ForEach(compo => compo.AfterInitialize());
+        }
+        
         protected virtual void AddComponents()
         {
             GetComponentsInChildren<IEntityComponent>().ToList()

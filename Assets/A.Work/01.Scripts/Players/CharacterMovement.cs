@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Scripts.Players
 {
-    public class CharacterMovement : MonoBehaviour, IEntityComponent
+    public class CharacterMovement : MonoBehaviour, IEntityComponent, IAfterInitialize
     {
         [SerializeField] private Rigidbody2D rigid2D;
 
@@ -23,6 +23,11 @@ namespace Code.Scripts.Players
         public void Initialize(Entity entity)
         {
             _entity = entity;
+        }
+        
+        public void AfterInitialize()
+        {
+            
         }
 
         private void FixedUpdate()
@@ -58,8 +63,6 @@ namespace Code.Scripts.Players
         {
             _movementDirection = Vector2.zero;
         }
-        
-        
         
     }
 }
