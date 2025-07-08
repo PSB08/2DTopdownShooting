@@ -859,6 +859,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3b6fff82fc4ca61409b18a3ec7be6964, type: 2}
   - {fileID: 11400000, guid: 94cf9fa9d889b2b48abbbf04ed02b970, type: 2}
   - {fileID: 11400000, guid: d50c67b713e3d3d4daea3ca8e87333a5, type: 2}
+  - {fileID: 11400000, guid: 8c467b10fc3dd8e4093f9d762b584adf, type: 2}
 --- !u!50 &1539499323
 Rigidbody2D:
   serializedVersion: 5
@@ -1004,8 +1005,8 @@ GameObject:
   - component: {fileID: 1687569336}
   - component: {fileID: 1687569337}
   - component: {fileID: 1687569340}
-  - component: {fileID: 1687569339}
   - component: {fileID: 1687569338}
+  - component: {fileID: 1687569339}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged

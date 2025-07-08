@@ -12,6 +12,7 @@ namespace Code.Scripts.Players.States
         public override void Enter()
         {
             base.Enter();
+            _movement.CanManualMovement = true;
         }
         
         public override void Update()
