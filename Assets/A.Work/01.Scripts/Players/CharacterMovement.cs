@@ -1,13 +1,17 @@
 ﻿using System;
 using Code.Scripts.Entities;
+using PSB_Lib.StatSystem;
 using UnityEngine;
 
 namespace Code.Scripts.Players
 {
     public class CharacterMovement : MonoBehaviour, IEntityComponent, IAfterInitialize
     {
+        [SerializeField] private StatSO moveSpeedStat;
         [SerializeField] private Rigidbody2D rigid2D;
 
+        private EntityStat _statCompo;
+        
         public bool CanManualMovement { get; set; } = true;
         private Vector2 _autoMovement;
 
@@ -23,11 +27,17 @@ namespace Code.Scripts.Players
         public void Initialize(Entity entity)
         {
             _entity = entity;
+            _statCompo = entity.GetCompo<EntityStat>();
         }
         
         public void AfterInitialize()
         {
-            
+            _moveSpeed = _statCompo.SubscribeStat(moveSpeedStat, HandleMoveSpeedChange, 8f);
+        }
+        
+        private void OnDestroy()
+        { 
+            _statCompo.UnSubscribeStat(moveSpeedStat, HandleMoveSpeedChange);
         }
 
         private void FixedUpdate()
@@ -35,7 +45,34 @@ namespace Code.Scripts.Players
             CalculateMovement();
             Move();
         }
+        
+        #region Temp
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                _statCompo.SetBaseValue(moveSpeedStat, 4f);
+            }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                _statCompo.SetBaseValue(moveSpeedStat, 8f);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                _statCompo.SetBaseValue(moveSpeedStat, 12f);
+            }
+        }
+
+        #endregion
+        
+        private void HandleMoveSpeedChange(StatSO stat, float currentValue, float prevValue)
+        {
+            _moveSpeed = currentValue;
+        }
+        
         public void SetMovementDirection(Vector2 movementInput)
         {
             _movementDirection = new Vector3(movementInput.x, movementInput.y, 0).normalized;
@@ -56,7 +93,8 @@ namespace Code.Scripts.Players
         
         private void Move()
         {
-            rigid2D.MovePosition(rigid2D.position + _velocity * Time.fixedDeltaTime);
+            Vector2 move = _velocity.normalized * (_moveSpeed * Time.fixedDeltaTime);
+            rigid2D.MovePosition(rigid2D.position + move);
         }
 
         public void StopImmediately()
