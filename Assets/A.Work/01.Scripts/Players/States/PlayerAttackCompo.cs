@@ -9,8 +9,6 @@ namespace Code.Scripts.Players.States
     public class PlayerAttackCompo : MonoBehaviour, IEntityComponent, IAfterInitialize
     {
         #region Temp Attack
-
-        private Entity _entity;
         
         [SerializeField] private Transform attackPoint;
         [SerializeField] private float attackRange = 0.5f;
@@ -23,20 +21,30 @@ namespace Code.Scripts.Players.States
         private HashSet<Collider2D> _hitEnemies = new HashSet<Collider2D>();
         private bool isAttacking = false;
         
+        private Entity _entity;
+        private EntityAnimatorTrigger _animatorTrigger;
+        
         public void Initialize(Entity entity)
         {
             _entity = entity;
             _statCompo = entity.GetCompo<EntityStat>();
+            _animatorTrigger = entity.GetCompo<EntityAnimatorTrigger>();
         }
         
         public void AfterInitialize()
         {
             _damage = _statCompo.SubscribeStat(damageStat, HandleDamageChange, 5f);   
+            _animatorTrigger.OnDamageCastTrigger += AttackHit;
+            _animatorTrigger.OnStartAttackCast += BeginAttack;
+            _animatorTrigger.OnEndAttackCast += EndAttack;
         }
 
         private void OnDestroy()
         {
             _statCompo.UnSubscribeStat(damageStat, HandleDamageChange);
+            _animatorTrigger.OnDamageCastTrigger -= AttackHit;
+            _animatorTrigger.OnStartAttackCast -= BeginAttack;
+            _animatorTrigger.OnEndAttackCast -= EndAttack;
         }
 
         private void HandleDamageChange(StatSO stat, float currentValue, float prevValue)
@@ -44,13 +52,13 @@ namespace Code.Scripts.Players.States
             _damage = currentValue;
         }
 
-        public void BeginAttack()
+        private void BeginAttack()
         {
             isAttacking = true;
             _hitEnemies.Clear();
         }
 
-        public void AttackHit()
+        private void AttackHit()
         {
             if (!isAttacking) return;
             
@@ -63,9 +71,10 @@ namespace Code.Scripts.Players.States
                 _hitEnemies.Add(enemy);
                 Debug.Log("피격 처리" + " " + enemy.name + " " + _damage);
             }
+            
         }
         
-        public void EndAttack()
+        private void EndAttack()
         {
             isAttacking = false;
             _hitEnemies.Clear();

@@ -6,6 +6,9 @@ namespace Code.Scripts.Entities
     public class EntityAnimatorTrigger : MonoBehaviour, IEntityComponent
     {
         public Action OnAnimationEndTrigger;
+        public Action OnStartAttackCast;
+        public Action OnEndAttackCast;
+        public Action OnDamageCastTrigger;
         
         private Entity _entity;
 
@@ -18,5 +21,9 @@ namespace Code.Scripts.Entities
         {
             OnAnimationEndTrigger?.Invoke();
         }
+        private void DamageCast() => OnDamageCastTrigger?.Invoke();
+        private void StartCast() => OnStartAttackCast?.Invoke();
+        private void EndCast() => OnEndAttackCast?.Invoke();
+        
     }
 }
