@@ -2,7 +2,7 @@
 {
     public class TestEnemy : Enemy
     {
-        public string name;
+        public new string name;
         
     }
 }

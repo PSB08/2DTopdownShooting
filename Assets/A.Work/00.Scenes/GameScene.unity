@@ -413,6 +413,9 @@ MonoBehaviour:
   - stat: {fileID: 11400000, guid: 399a061c3613a67499960b95c9968938, type: 2}
     isUseOverride: 1
     overrideValue: 5
+  - stat: {fileID: 11400000, guid: 4536c7de7dea71449aa15d1a54161da5, type: 2}
+    isUseOverride: 1
+    overrideValue: 1
 --- !u!1 &692643278
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +996,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  attackBoxSize: {x: 1, y: 1}
+  defaultAttackData: {fileID: 11400000, guid: 40ae647fc3b4ec3449dd19ad69b14315, type: 2}
   damageStat: {fileID: 11400000, guid: 399a061c3613a67499960b95c9968938, type: 2}
 --- !u!1 &1687569335
 GameObject:

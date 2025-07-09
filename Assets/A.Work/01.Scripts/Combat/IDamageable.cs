@@ -5,6 +5,7 @@ namespace Code.Scripts.Combat
 {
     public interface IDamageable
     {
-        public void ApplyDamage(DamageData damageData, Vector3 hitPoint, Vector3 hitNormal, Entity dealer);
+        public void ApplyDamage(DamageData damageData, Vector3 hitPoint, Vector3 hitNormal, AttackDataSO attackData, 
+            Entity dealer);
     }
 }

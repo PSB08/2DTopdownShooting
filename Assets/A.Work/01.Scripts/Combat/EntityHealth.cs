@@ -20,12 +20,12 @@ namespace Code.Scripts.Combat
             _actionData = entity.GetCompo<EntityActionData>();
             _statCompo = entity.GetCompo<EntityStat>();
         }
-
-        public void ApplyDamage(DamageData damageData, Vector3 hitPoint, Vector3 hitNormal, Entity dealer)
+        
+        public void ApplyDamage(DamageData damageData, Vector3 hitPoint, Vector3 hitNormal, AttackDataSO attackData, Entity dealer)
         {
             _actionData.HitPoint = hitPoint;
             _actionData.HitNormal = hitNormal;
-            
+
             currentHealth = Mathf.Clamp(currentHealth - damageData.damage, 0, maxHealth);
             if (currentHealth <= 0)
             {
@@ -34,7 +34,7 @@ namespace Code.Scripts.Combat
             
             _entity.OnHitEvent?.Invoke();
         }
-
+        
         public void AfterInitialize()
         {
             currentHealth = maxHealth = _statCompo.SubscribeStat(hpStat, HandleMaxHPChange, 10f);
@@ -58,7 +58,7 @@ namespace Code.Scripts.Combat
                 currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
             }
         }
-        
+
         
     }
 }
