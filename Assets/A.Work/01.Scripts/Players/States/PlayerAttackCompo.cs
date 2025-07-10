@@ -10,20 +10,22 @@ namespace Code.Scripts.Players.States
     {
         #region Temp Attack
         
+        [Header("Attack Damage")]
+        [SerializeField] private StatSO damageStat;
+        private float _damage = 5f;
+        
+        [Header("Attack Range")]
         [SerializeField] private Transform attackPoint;
         [SerializeField] private float attackRange = 0.5f;
         [SerializeField] private LayerMask enemyLayer;
         [SerializeField] private AttackDataSO defaultAttackData;
-
-        [SerializeField] private StatSO damageStat;
+        
+        private Entity _entity;
         private EntityStat _statCompo;
-        private float _damage = 5f;
+        private EntityAnimatorTrigger _animatorTrigger;
         
         private HashSet<Collider2D> _hitEnemies = new HashSet<Collider2D>();
         private bool isAttacking = false;
-        
-        private Entity _entity;
-        private EntityAnimatorTrigger _animatorTrigger;
         
         public void Initialize(Entity entity)
         {
@@ -67,21 +69,6 @@ namespace Code.Scripts.Players.States
             CastDamage(damageData, attackPoint.position, defaultAttackData);
         }
         
-        public void ApplyDamageAndKnockback(Transform target, DamageData damageData, Vector3 position,
-            Vector3 normal, AttackDataSO attackData, Vector3 direction)
-        {
-            if (target.TryGetComponent(out IDamageable damageable))
-            {
-                damageable.ApplyDamage(damageData, position, normal, attackData, _entity);
-            }
-
-            if (target.TryGetComponent(out IKnockbackable knockbackable))
-            {
-                Vector2 force = new Vector2(direction.x, direction.y).normalized * attackData.knockBackForce;
-                knockbackable.Knockback(force, attackData.knockBackDuration);
-            }
-        }
-        
         public bool CastDamage(DamageData damageData, Vector3 position, AttackDataSO attackData)
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(position, attackRange, enemyLayer);
@@ -101,6 +88,21 @@ namespace Code.Scripts.Players.States
                 hitSuccess = true;
             }
             return hitSuccess;
+        }
+        
+        public void ApplyDamageAndKnockback(Transform target, DamageData damageData, Vector3 position,
+            Vector3 normal, AttackDataSO attackData, Vector3 direction)
+        {
+            if (target.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.ApplyDamage(damageData, position, normal, attackData, _entity);
+            }
+
+            if (target.TryGetComponent(out IKnockbackable knockbackable))
+            {
+                Vector2 force = new Vector2(direction.x, direction.y).normalized * attackData.knockBackForce;
+                knockbackable.Knockback(force, attackData.knockBackDuration);
+            }
         }
         
         

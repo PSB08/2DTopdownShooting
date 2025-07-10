@@ -991,14 +991,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f03a39ce9654867bb1c07373e0ba280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageStat: {fileID: 11400000, guid: 399a061c3613a67499960b95c9968938, type: 2}
   attackPoint: {fileID: 1932072676}
   attackRange: 0.5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  attackBoxSize: {x: 1, y: 1}
   defaultAttackData: {fileID: 11400000, guid: 40ae647fc3b4ec3449dd19ad69b14315, type: 2}
-  damageStat: {fileID: 11400000, guid: 399a061c3613a67499960b95c9968938, type: 2}
 --- !u!1 &1687569335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,6 +1687,7 @@ GameObject:
   - component: {fileID: 3045273908658979971}
   - component: {fileID: 2892778138096542859}
   - component: {fileID: 9025510273629836958}
+  - component: {fileID: 9025510273629836959}
   - component: {fileID: 9025510273629836957}
   m_Layer: 8
   m_Name: Enemy1
@@ -1723,13 +1723,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6528377acb964ed68b627e2a7970dfdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeadEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  name: St
+  <DetectRadius>k__BackingField: 8
+--- !u!114 &9025510273629836959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025510273629836956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Graph: {fileID: -8411602588035489723, guid: 88657935ceae3b34fbf3cba16d69339f, type: 2}
+  m_BlackboardVariableOverridesList:
+  - rid: 2909550999150002507
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 2909550999150002507
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 9025510273629836956}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
