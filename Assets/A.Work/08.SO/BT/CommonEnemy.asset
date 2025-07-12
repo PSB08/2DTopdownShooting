@@ -17,7 +17,9 @@ MonoBehaviour:
     m_Value1: 11471628595429635067
   m_Variables:
   - rid: 2909550999150002498
-  m_VersionTimestamp: 638877874185514362
+  - rid: 2909551031837524041
+  - rid: 2909551031837524051
+  m_VersionTimestamp: 638879597570244041
   m_CommandBuffer:
     m_Commands: []
   m_RuntimeBlackboardAsset: {fileID: -5443957723507478178}
@@ -31,6 +33,26 @@ MonoBehaviour:
           m_Value0: 1
           m_Value1: 0
         Name: Self
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
+    - rid: 2909551031837524041
+      type: {class: 'TypedVariableModel`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 10425652964943311904
+          m_Value1: 17409140863925610215
+        Name: Target
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
+    - rid: 2909551031837524051
+      type: {class: 'TypedVariableModel`1[[Code.Scripts.Enemies.WayPoints, Assembly-CSharp]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 4038055234669485261
+          m_Value1: 6172192695437873827
+        Name: WayPoints
         IsExposed: 1
         m_IsShared: 0
         m_Value: {fileID: 0}
@@ -60,16 +82,16 @@ MonoBehaviour:
   m_Name: CommonEnemy
   m_EditorClassIdentifier: 
   Graphs:
-  - rid: 2909550999150002499
+  - rid: 2909551031837524062
   RootGraph:
-    rid: 2909550999150002499
+    rid: 2909551031837524062
   m_DebugInfo: {fileID: -8594532029651978807}
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 2909550999150002499
+    - rid: 2909551031837524062
       type: {class: BehaviorGraphModule, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         AuthoringAssetID:
@@ -77,55 +99,73 @@ MonoBehaviour:
           m_Value1: 11471628595429635067
         m_DebugInfo: {fileID: 0}
         BlackboardReference:
-          rid: 2909550999150002500
+          rid: 2909551031837524063
         BlackboardGroupReferences: []
         Root:
-          rid: 2909550999150002501
+          rid: 2909551031837524064
         m_ActiveNodes: []
         m_NodesToTick: []
         m_NodesToEnd:
-          rid: 2909550999150002502
+          rid: 2909551031837524065
         m_EndedNodes:
-          rid: 2909550999150002503
-        m_VersionTimestamp: 638877874186095195
-    - rid: 2909550999150002500
+          rid: 2909551031837524066
+        m_VersionTimestamp: 638879598838979866
+    - rid: 2909551031837524063
       type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Blackboard:
-          rid: 2909550999150002504
+          rid: 2909551031837524067
         m_Source: {fileID: -5443957723507478178}
-    - rid: 2909550999150002501
+    - rid: 2909551031837524064
       type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         ID:
           m_Value0: 16911305105386550218
           m_Value1: 12180410388979646823
         Graph:
-          rid: 2909550999150002499
+          rid: 2909551031837524062
         m_Parent:
           rid: -2
         m_Child:
           rid: -2
-        Repeat: 1
+        Repeat: 0
         AllowMultipleRepeatsPerTick: 0
-    - rid: 2909550999150002502
+    - rid: 2909551031837524065
       type: {class: 'Stack`1[[Unity.Behavior.Node, Unity.Behavior]]', ns: System.Collections.Generic, asm: mscorlib}
       data: 
-    - rid: 2909550999150002503
+    - rid: 2909551031837524066
       type: {class: 'HashSet`1[[Unity.Behavior.Node, Unity.Behavior]]', ns: System.Collections.Generic, asm: System.Core}
       data: 
-    - rid: 2909550999150002504
+    - rid: 2909551031837524067
       type: {class: Blackboard, ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         m_Variables:
-        - rid: 2909550999150002505
-    - rid: 2909550999150002505
+        - rid: 2909551031837524068
+        - rid: 2909551031837524069
+        - rid: 2909551031837524070
+    - rid: 2909551031837524068
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
           m_Value0: 1
           m_Value1: 0
         Name: Self
+        m_Value: {fileID: 0}
+    - rid: 2909551031837524069
+      type: {class: 'BlackboardVariable`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 10425652964943311904
+          m_Value1: 17409140863925610215
+        Name: Target
+        m_Value: {fileID: 0}
+    - rid: 2909551031837524070
+      type: {class: 'BlackboardVariable`1[[Code.Scripts.Enemies.WayPoints, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 4038055234669485261
+          m_Value1: 6172192695437873827
+        Name: WayPoints
         m_Value: {fileID: 0}
 --- !u!114 &-5443957723507478178
 MonoBehaviour:
@@ -139,13 +179,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c02bb70996b49eba31d0c206e28da24, type: 3}
   m_Name: CommonEnemy Blackboard
   m_EditorClassIdentifier: 
-  VersionTimestamp: 638877874185514362
+  VersionTimestamp: 638879597570244041
   AssetID:
     m_Value0: 3763794114281825672
     m_Value1: 11471628595429635067
   m_Blackboard:
     m_Variables:
     - rid: 2909550999150002506
+    - rid: 2909551031837524050
+    - rid: 2909551031837524061
   m_SharedBlackboardVariableGuids: []
   references:
     version: 2
@@ -157,6 +199,22 @@ MonoBehaviour:
           m_Value0: 1
           m_Value1: 0
         Name: Self
+        m_Value: {fileID: 0}
+    - rid: 2909551031837524050
+      type: {class: 'BlackboardVariable`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 10425652964943311904
+          m_Value1: 17409140863925610215
+        Name: Target
+        m_Value: {fileID: 0}
+    - rid: 2909551031837524061
+      type: {class: 'BlackboardVariable`1[[Code.Scripts.Enemies.WayPoints, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 4038055234669485261
+          m_Value1: 6172192695437873827
+        Name: WayPoints
         m_Value: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -174,7 +232,7 @@ MonoBehaviour:
   m_Description: 
   m_Nodes:
   - rid: 2909550999150002496
-  m_VersionTimestamp: 638877874186095195
+  m_VersionTimestamp: 638879598838979866
   m_DebugInfo: {fileID: -8594532029651978807}
   m_RuntimeGraph: {fileID: -8411602588035489723}
   AssetID:
@@ -217,7 +275,7 @@ MonoBehaviour:
           m_Value0: 3335272451348827663
           m_Value1: 11549843281177505721
         m_FieldValues: []
-        Repeat: 1
+        Repeat: 0
         AllowMultipleRepeatsPerTick: 0
     - rid: 2909550999150002497
       type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
