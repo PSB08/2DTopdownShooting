@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Scripts.Enemies.BT;
 using Code.Scripts.Entities;
-using Unity.Behavior;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Code.Scripts.Enemies
 {

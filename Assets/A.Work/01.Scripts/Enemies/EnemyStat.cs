@@ -1,23 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Code.Scripts.Enemies.BT;
 using PSB_Lib.StatSystem;
 using UnityEngine;
 
-namespace Code.Scripts.Entities
+namespace Code.Scripts.Enemies
 {
-    public class EntityStat : MonoBehaviour, IEntityComponent
+    public class EnemyStat : MonoBehaviour, IBtEntityComponent
     {
         [SerializeField] private StatOverride[] statOverrides;
         private Dictionary<string, StatSO> _stats = new Dictionary<string, StatSO>();
         
-        public Entity Owner { get; private set; }
+        public IComponentOwner Owner { get; private set; }
         
-        public void Initialize(Entity entity)
+        public void Initialize(IComponentOwner owner)
         {
-            Owner = entity;
+            Owner = owner;
             _stats = statOverrides.ToDictionary(so => so.StatName, so => so.CreateStat());
         }
-
+        
         public StatSO GetStat(StatSO stat)
         {
             Debug.Assert(stat != null, "Finding stat cannot be null");

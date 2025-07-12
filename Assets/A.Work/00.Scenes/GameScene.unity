@@ -457,7 +457,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 692643278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 086586a8a189454a99508d4e34c2a114, type: 3}
+  m_Script: {fileID: 11500000, guid: f61ec3fa81d94d1ca3eeaa55ed130f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &752627340
@@ -469,7 +469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 752627341}
-  - component: {fileID: 752627342}
+  - component: {fileID: 752627343}
   m_Layer: 8
   m_Name: EnemyStat
   m_TagString: Untagged
@@ -492,7 +492,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8946887656799926596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &752627342
+--- !u!114 &752627343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 752627340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71567fb4ca2e45109d8ab0a4ac96a9cf, type: 3}
+  m_Script: {fileID: 11500000, guid: f3402953c0b14cfdbdc768e6b2895ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   statOverrides:
@@ -939,6 +939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc0ed40c719467f96e1db3f32c2e57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _actionData: {fileID: 1483861082}
+  _statCompo: {fileID: 433295420}
   hpStat: {fileID: 11400000, guid: f5bd50486df58504ca573f8e6d5e1743, type: 2}
   maxHealth: 100
   currentHealth: 0
@@ -1688,7 +1690,7 @@ GameObject:
   - component: {fileID: 2892778138096542859}
   - component: {fileID: 9025510273629836958}
   - component: {fileID: 9025510273629836959}
-  - component: {fileID: 9025510273629836957}
+  - component: {fileID: 9025510273629836960}
   m_Layer: 8
   m_Name: Enemy1
   m_TagString: Untagged
@@ -1696,21 +1698,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &9025510273629836957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9025510273629836956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dc0ed40c719467f96e1db3f32c2e57a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpStat: {fileID: 11400000, guid: 3a79e21e6a425b34480cc3c2d427cf70, type: 2}
-  maxHealth: 0
-  currentHealth: 0
 --- !u!114 &9025510273629836958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1752,6 +1739,29 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 9025510273629836956}
+--- !u!114 &9025510273629836960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025510273629836956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71bb7e6f69143bab6adcd45d31025c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _actionData: {fileID: 692643280}
+  _statCompo: {fileID: 752627343}
+  hpStat: {fileID: 11400000, guid: 3a79e21e6a425b34480cc3c2d427cf70, type: 2}
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
