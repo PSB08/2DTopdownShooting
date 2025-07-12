@@ -41,5 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tilemap
+    uniqueID: 1942288913
+    locked: 0
+  - name: Player
+    uniqueID: 3251401675
+    locked: 0
+  - name: Enemy
+    uniqueID: 1263933551
+    locked: 0
   m_RenderingLayers:
   - Default
