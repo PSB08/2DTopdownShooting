@@ -10,7 +10,7 @@ namespace Code.Scripts.Enemies.Astar
         public List<NodeData> points = new  List<NodeData>();
         
         private Dictionary<Vector3Int, NodeData> _pointDict; // 이건 처음에 사용할 때 초기화 하면서 만들 딕셔너리
-        
+
         private void OnEnable()
         {
             Initialize();

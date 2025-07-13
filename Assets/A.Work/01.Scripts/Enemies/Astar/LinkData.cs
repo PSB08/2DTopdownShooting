@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Code.Scripts.Enemies.Astar
 {
-    public class LinkData : MonoBehaviour
+    [Serializable]
+    public struct LinkData
     {
         public Vector3 startPosition;
         public Vector3Int startCellPosition;

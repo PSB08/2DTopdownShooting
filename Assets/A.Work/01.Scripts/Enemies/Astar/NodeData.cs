@@ -48,6 +48,7 @@ namespace Code.Scripts.Enemies.Astar
         {
             return !(lhs == rhs);
         }
+        
+        
     }
-    
 }
