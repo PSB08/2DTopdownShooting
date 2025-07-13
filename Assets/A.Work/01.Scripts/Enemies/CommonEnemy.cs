@@ -19,6 +19,11 @@ namespace Code.Scripts.Enemies
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, DetectRadius);
         }
+
+        public void DestroyObject()
+        {
+            Destroy(gameObject);
+        }
         
     }
 }
