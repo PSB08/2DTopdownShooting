@@ -21,10 +21,9 @@ namespace Code.Scripts.Players.States
             
             _movement.SetMovementDirection(movementKey);
             
-            if (movementKey.sqrMagnitude > 0.01f)
+            if (movementKey.x != 0)
             {
-                _animator.SetParam(MoveXHash, movementKey.x);
-                _animator.SetParam(MoveYHash, movementKey.y);
+                _unitRoot.localScale = new Vector3(movementKey.x > 0 ? -1 : 1, 1, 1);
             }
             
             if (movementKey.magnitude < _inputThreshold)

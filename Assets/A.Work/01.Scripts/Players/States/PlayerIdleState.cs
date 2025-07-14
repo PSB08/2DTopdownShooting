@@ -21,10 +21,14 @@ namespace Code.Scripts.Players.States
             Vector2 movementKey = _player.PlayerInput.MovementKey;
             
             _movement.SetMovementDirection(movementKey);
+            
+            if (movementKey.x != 0)
+            {
+                _unitRoot.localScale = new Vector3(movementKey.x > 0 ? -1 : 1, 1, 1);
+            }
+            
             if (movementKey.magnitude > 0.01f)
             {
-                _animator.SetParam(MoveXHash, movementKey.x);
-                _animator.SetParam(MoveYHash, movementKey.y);
                 _player.ChangeState("MOVE");
             }
         }

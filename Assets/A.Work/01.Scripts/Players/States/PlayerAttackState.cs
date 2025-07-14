@@ -19,10 +19,9 @@ namespace Code.Scripts.Players.States
             
             Vector2 moveDir = _player.PlayerInput.MovementKey;
             
-            if (moveDir.sqrMagnitude > 0.01f)
+            if (moveDir.x != 0)
             {
-                _animator.SetParam(MoveXHash, moveDir.x);
-                _animator.SetParam(MoveYHash, moveDir.y);
+                _unitRoot.localScale = new Vector3(moveDir.x > 0 ? -1 : 1, 1, 1);
             }
         }
         
