@@ -41,7 +41,7 @@ namespace Code.Scripts.Entities
 
         public void FlipController(float xMove)
         {
-            if (Mathf.Abs(FacingDirection + xMove) < 0.5f) // 진행 방향과 입력방향이 역방향이면 true
+            if (Mathf.Abs(FacingDirection + xMove) < 0.5f)
             {
                 Flip();
             }
@@ -50,9 +50,8 @@ namespace Code.Scripts.Entities
         public void Flip()
         {
             FacingDirection *= -1;
-            float targetYAngle = FacingDirection > 0 ? 0 : 180f;
+            float targetYAngle = FacingDirection > 0 ? 180f : 0;
             _owner.Transform.rotation = Quaternion.Euler(0f, targetYAngle, 0f);
-            // transform.Rotate(0, 180f, 0); // 컴퓨터 소수 모름
         }
 
         #endregion
