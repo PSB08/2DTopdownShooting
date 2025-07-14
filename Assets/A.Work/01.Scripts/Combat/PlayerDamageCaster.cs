@@ -4,53 +4,41 @@ namespace Code.Scripts.Combat
 {
     public class PlayerDamageCaster : DamageCaster
     {
-        [SerializeField] private Vector2 castSize = new Vector2(1f, 0.5f);
-        [SerializeField] private Vector2 verticalCastSize = new Vector2(0.5f, 1f);
-        [SerializeField] private float castOffset = 0.5f;
-        [SerializeField] private float castDistance = 1f;
-        
-        private Vector2 _lastCastDirection = Vector2.right;
-
-        public override bool CastDamage(DamageData damageData, Vector3 position, Vector3 direction, AttackDataSO attackData)
+        public override bool CastDamage(DamageData damageData, Vector3 position, AttackDataSO attackData)
         {
-            Vector2 dir = direction.normalized;
-
-            Vector2 size = Mathf.Abs(dir.x) > Mathf.Abs(dir.y) ? castSize : verticalCastSize;
-
-            Vector2 center = (Vector2)position + dir * (castDistance * 0.5f + castOffset);
-
-            Collider2D[] hits = Physics2D.OverlapBoxAll(center, size, 0f, whatIsTarget);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(position, attackRange, targetLayer);
 
             bool hitSuccess = false;
             foreach (var hit in hits)
             {
-                if (hit != null)
-                {
-                    ApplyDamageAndKnockback(hit.transform, damageData, hit.transform.position, -dir, attackData, dir);
-                    hitSuccess = true;
-                }
-            }
+                if (_hitTargets.Contains(hit)) continue;
 
-            _lastCastDirection = dir;
+                _hitTargets.Add(hit);
+
+                Vector3 hitPos = hit.transform.position;
+                Vector3 direction = (hitPos - position).normalized;
+                Vector3 normal = -direction;
+
+                ApplyDamageAndKnockback(hit.transform, damageData, hitPos, normal, attackData, direction);
+                hitSuccess = true;
+            }
             return hitSuccess;
         }
-
-#if UNITY_EDITOR
-
-        private void OnDrawGizmos()
-        {
-            Vector2 dir = (Application.isPlaying && _lastCastDirection != Vector2.zero)
-                ? _lastCastDirection
-                : Vector2.right;
-
-            Vector2 size = Mathf.Abs(dir.x) > Mathf.Abs(dir.y) ? castSize : verticalCastSize;
-            Vector2 center = (Vector2)transform.position + dir * (castDistance * 0.5f + castOffset);
-
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireCube(center, size);
-        }
         
-#endif
+        public override void ApplyDamageAndKnockback(Transform target, DamageData damageData, Vector3 position,
+            Vector3 normal, AttackDataSO attackData, Vector3 direction)
+        {
+            if (target.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.ApplyDamage(damageData, position, normal, attackData, _entity);
+            }
+
+            if (target.TryGetComponent(out IKnockbackable knockbackable))
+            {
+                Vector2 force = new Vector2(direction.x, direction.y).normalized * attackData.knockBackForce;
+                knockbackable.Knockback(force, attackData.knockBackDuration);
+            }
+        }
         
     }
 }

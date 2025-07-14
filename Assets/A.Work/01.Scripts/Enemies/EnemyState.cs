@@ -5,8 +5,10 @@ namespace Code.Scripts.Enemies
     [BlackboardEnum]
     public enum EnemyState
     {
-        PATROL = 1,
-        CHASE = 2,
-        ATTACK = 3
+        CHASE = 1,
+        ATTACK = 2,
+        HIT = 3,
+        DEAD = 4,
+        
     }
 }

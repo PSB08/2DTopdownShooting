@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Code.Scripts.Combat;
+﻿using Code.Scripts.Combat;
 using Code.Scripts.Entities;
 using PSB_Lib.StatSystem;
 using UnityEngine;
@@ -14,23 +13,18 @@ namespace Code.Scripts.Players.States
         [SerializeField] private StatSO damageStat;
         private float _damage = 5f;
         
-        [Header("Attack Range")]
-        [SerializeField] private Transform attackPoint;
-        [SerializeField] private float attackRange = 0.5f;
-        [SerializeField] private LayerMask enemyLayer;
-        [SerializeField] private AttackDataSO defaultAttackData;
-        
         private Entity _entity;
         private EntityStat _statCompo;
+        private PlayerDamageCaster _damageCaster;
         private EntityAnimatorTrigger _animatorTrigger;
         
-        private HashSet<Collider2D> _hitEnemies = new HashSet<Collider2D>();
         private bool isAttacking = false;
         
         public void Initialize(Entity entity)
         {
             _entity = entity;
             _statCompo = entity.GetCompo<EntityStat>();
+            _damageCaster = entity.GetCompo<PlayerDamageCaster>();
             _animatorTrigger = entity.GetCompo<EntityAnimatorTrigger>();
         }
         
@@ -58,7 +52,7 @@ namespace Code.Scripts.Players.States
         private void BeginAttack()
         {
             isAttacking = true;
-            _hitEnemies.Clear();
+            _damageCaster._hitTargets.Clear();
         }
 
         private void AttackHit()
@@ -66,61 +60,16 @@ namespace Code.Scripts.Players.States
             if (!isAttacking) return;
 
             DamageData damageData = new DamageData { damage = _damage };
-            CastDamage(damageData, attackPoint.position, defaultAttackData);
+            _damageCaster.CastDamage(damageData, _damageCaster.attackPoint.position, _damageCaster.defaultAttackData);
         }
-        
-        public bool CastDamage(DamageData damageData, Vector3 position, AttackDataSO attackData)
-        {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(position, attackRange, enemyLayer);
-
-            bool hitSuccess = false;
-            foreach (var hit in hits)
-            {
-                if (_hitEnemies.Contains(hit)) continue;
-
-                _hitEnemies.Add(hit);
-
-                Vector3 hitPos = hit.transform.position;
-                Vector3 direction = (hitPos - position).normalized;
-                Vector3 normal = -direction;
-
-                ApplyDamageAndKnockback(hit.transform, damageData, hitPos, normal, attackData, direction);
-                hitSuccess = true;
-            }
-            return hitSuccess;
-        }
-        
-        public void ApplyDamageAndKnockback(Transform target, DamageData damageData, Vector3 position,
-            Vector3 normal, AttackDataSO attackData, Vector3 direction)
-        {
-            if (target.TryGetComponent(out IDamageable damageable))
-            {
-                damageable.ApplyDamage(damageData, position, normal, attackData, _entity);
-            }
-
-            if (target.TryGetComponent(out IKnockbackable knockbackable))
-            {
-                Vector2 force = new Vector2(direction.x, direction.y).normalized * attackData.knockBackForce;
-                knockbackable.Knockback(force, attackData.knockBackDuration);
-            }
-        }
-        
         
         private void EndAttack()
         {
             isAttacking = false;
-            _hitEnemies.Clear();
+            _damageCaster._hitTargets.Clear();
         }
         
         #endregion
-
-        private void OnDrawGizmosSelected()
-        {
-            if (attackPoint == null) return;
-
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        }
         
     }
 }

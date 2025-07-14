@@ -526,7 +526,7 @@ Transform:
   m_GameObject: {fileID: 191040589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.38, y: 4.62, z: -12}
+  m_LocalPosition: {x: -0.43, y: 6.2, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -944,9 +944,6 @@ MonoBehaviour:
   - stat: {fileID: 11400000, guid: 399a061c3613a67499960b95c9968938, type: 2}
     isUseOverride: 1
     overrideValue: 5
-  - stat: {fileID: 11400000, guid: 4536c7de7dea71449aa15d1a54161da5, type: 2}
-    isUseOverride: 1
-    overrideValue: 1
 --- !u!1 &384888596
 GameObject:
   m_ObjectHideFlags: 0
@@ -4164,6 +4161,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &973453697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973453698}
+  - component: {fileID: 973453699}
+  m_Layer: 7
+  m_Name: DamageCaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &973453698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973453697}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1382315277}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &973453699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973453697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d910729deaf64c1b9bbf4aaf446f02f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPoint: {fileID: 513196723}
+  defaultAttackData: {fileID: 11400000, guid: 40ae647fc3b4ec3449dd19ad69b14315, type: 2}
+  attackRange: 0.5
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &985238226
 GameObject:
   m_ObjectHideFlags: 0
@@ -37267,7 +37314,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 973453698}
   m_Father: {fileID: 8665557587359068428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1382315278
@@ -37283,12 +37331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageStat: {fileID: 11400000, guid: 399a061c3613a67499960b95c9968938, type: 2}
-  attackPoint: {fileID: 513196723}
-  attackRange: 0.5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  defaultAttackData: {fileID: 11400000, guid: 40ae647fc3b4ec3449dd19ad69b14315, type: 2}
 --- !u!1 &1471500631
 GameObject:
   m_ObjectHideFlags: 0
@@ -37815,7 +37857,6 @@ Transform:
   m_Children:
   - {fileID: 1173648401}
   - {fileID: 384888597}
-  - {fileID: 2065483043}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1626648251
@@ -38050,7 +38091,7 @@ Transform:
   m_GameObject: {fileID: 1740050169}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.38, y: 4.62, z: -12}
+  m_LocalPosition: {x: -0.43, y: 6.2, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38798,7 +38839,7 @@ GameObject:
   - component: {fileID: 2065483042}
   - component: {fileID: 2065483044}
   m_Layer: 0
-  m_Name: 1_Nexus_0
+  m_Name: Nexus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38848,7 +38889,7 @@ SpriteRenderer:
   m_SortingLayerID: 1268138137
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5204446660266414598, guid: 6386a831423d34b4bafbab2323dfd822, type: 3}
+  m_Sprite: {fileID: 9159566210088081630, guid: 0d7d0bf8307514eaf81aa72f558d3fb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -38868,11 +38909,11 @@ Transform:
   m_GameObject: {fileID: 2065483041}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.55, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1626648250}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2065483044
 CircleCollider2D:
@@ -38909,7 +38950,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 5.095
+  m_Radius: 1
 --- !u!1 &2077544153
 GameObject:
   m_ObjectHideFlags: 0
@@ -42661,6 +42702,7 @@ MonoBehaviour:
   - rid: 2909550999150002507
   - rid: 2909551066443415650
   - rid: 2909551066443415651
+  - rid: 2909551088879534472
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -42690,6 +42732,14 @@ MonoBehaviour:
           m_Value1: 6172192695437873827
         Name: WayPoints
         m_Value: {fileID: 2112596029}
+    - rid: 2909551088879534472
+      type: {class: 'BlackboardVariable`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 6126792116550040380
+          m_Value1: 13789364880768352185
+        Name: Nexus
+        m_Value: {fileID: 2065483043}
 --- !u!114 &7279406568563306496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43642,7 +43692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.38, y: 4.62}
+  m_AnchoredPosition: {x: -0.43, y: 6.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &8665557587359068429
@@ -43955,3 +44005,4 @@ SceneRoots:
   - {fileID: 8665557587359068428}
   - {fileID: 662280283}
   - {fileID: 1211110599}
+  - {fileID: 2065483043}

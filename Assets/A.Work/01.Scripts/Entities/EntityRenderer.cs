@@ -50,7 +50,7 @@ namespace Code.Scripts.Entities
         public void Flip()
         {
             FacingDirection *= -1;
-            float targetYAngle = FacingDirection > 0 ? 180f : 0;
+            float targetYAngle = FacingDirection > 0 ? 0 : 180f;
             _owner.Transform.rotation = Quaternion.Euler(0f, targetYAngle, 0f);
         }
 
