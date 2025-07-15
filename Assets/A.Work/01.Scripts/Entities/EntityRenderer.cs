@@ -55,6 +55,16 @@ namespace Code.Scripts.Entities
             localScale.x = Mathf.Abs(localScale.x) * (FacingDirection > 0 ? 1f : -1f);
             _owner.Transform.localScale = localScale;
         }
+        
+        public void FlipTowardsTarget(Transform target)
+        {
+            float targetX = target.position.x;
+            float selfX = _owner.Transform.position.x;
+
+            float xDir = targetX - selfX;
+
+            FlipController(Mathf.Sign(xDir));
+        }
 
         #endregion
         
