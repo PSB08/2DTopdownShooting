@@ -50,8 +50,10 @@ namespace Code.Scripts.Entities
         public void Flip()
         {
             FacingDirection *= -1;
-            float targetYAngle = FacingDirection > 0 ? 0 : 180f;
-            _owner.Transform.rotation = Quaternion.Euler(0f, targetYAngle, 0f);
+
+            Vector3 localScale = _owner.Transform.localScale;
+            localScale.x = Mathf.Abs(localScale.x) * (FacingDirection > 0 ? 1f : -1f);
+            _owner.Transform.localScale = localScale;
         }
 
         #endregion

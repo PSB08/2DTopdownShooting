@@ -6,6 +6,7 @@ namespace Code.Scripts.Enemies
     public class CommonEnemy : Enemy
     {
         [field: SerializeField] public float DetectRadius { get; private set; } = 8f;
+        [field: SerializeField] public float AttackRadius { get; private set; } = 1.5f;
         public BehaviorGraphAgent BtAgent { get; private set; }
 
         protected override void InitializeCompos()
@@ -18,6 +19,8 @@ namespace Code.Scripts.Enemies
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, DetectRadius);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, AttackRadius);
         }
 
         public void DestroyObject()

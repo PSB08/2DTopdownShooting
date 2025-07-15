@@ -857,7 +857,7 @@ MonoBehaviour:
     overrideValue: 100
   - stat: {fileID: 11400000, guid: aba835fab962cc14d85d1a6e58d1600d, type: 2}
     isUseOverride: 1
-    overrideValue: 8
+    overrideValue: 3
 --- !u!1 &361325436
 GameObject:
   m_ObjectHideFlags: 0
@@ -40720,7 +40720,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7279406568563306491}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -42684,7 +42684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6528377acb964ed68b627e2a7970dfdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DetectRadius>k__BackingField: 5
+  <DetectRadius>k__BackingField: 6
+  <AttackRadius>k__BackingField: 1.5
 --- !u!114 &7279406568563306495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42795,7 +42796,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1359538685620211884}
