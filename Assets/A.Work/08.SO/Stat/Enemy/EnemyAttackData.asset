@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94bbf208d70d43638c3a3fad4eca7ab1, type: 3}
-  m_Name: AttackData
+  m_Name: EnemyAttackData
   m_EditorClassIdentifier: 
   damageMultiplier: 1.2
   damageIncrease: 0
