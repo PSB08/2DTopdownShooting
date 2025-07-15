@@ -1,4 +1,5 @@
-﻿using Code.Scripts.Enemies.BT;
+﻿using System;
+using Code.Scripts.Enemies.BT;
 using UnityEngine;
 
 namespace Code.Scripts.Entities
@@ -8,6 +9,10 @@ namespace Code.Scripts.Entities
         [field: SerializeField]public float FacingDirection { get; private set; } = 1f;
         
         [SerializeField] private Animator animator;
+        
+        public Action OnStartAttackCast;
+        public Action OnEndAttackCast;
+        public Action OnDamageCastTrigger;
         
         private IComponentOwner _owner;
         private AnimParamSO _currClip;
@@ -67,6 +72,10 @@ namespace Code.Scripts.Entities
         }
 
         #endregion
+        
+        private void DamageCast() => OnDamageCastTrigger?.Invoke();
+        private void StartCast() => OnStartAttackCast?.Invoke();
+        private void EndCast() => OnEndAttackCast?.Invoke();
         
         
     }

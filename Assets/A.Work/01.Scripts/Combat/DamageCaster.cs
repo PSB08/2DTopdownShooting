@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using Code.Scripts.Enemies.BT;
 using Code.Scripts.Entities;
 using UnityEngine;
 
 namespace Code.Scripts.Combat
 {
-    public abstract class DamageCaster : MonoBehaviour, IEntityComponent
+    public abstract class DamageCaster : MonoBehaviour, IEntityComponent, IBtEntityComponent
     {
         [Header("Attack Range")]
         public Transform attackPoint;
@@ -13,11 +14,18 @@ namespace Code.Scripts.Combat
         public LayerMask targetLayer;
 
         protected Entity _entity;
+        protected IComponentOwner _owner;
+        
         [field:SerializeField] public HashSet<Collider2D> _hitTargets = new HashSet<Collider2D>();
         
         public void Initialize(Entity entity)
         {
             _entity = entity;
+        }
+        
+        public void Initialize(IComponentOwner owner)
+        {
+            _owner = owner;
         }
 
         public abstract bool CastDamage(DamageData damageData, Vector3 position, AttackDataSO attackData);
