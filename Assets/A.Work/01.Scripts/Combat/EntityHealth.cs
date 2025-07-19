@@ -11,8 +11,8 @@ namespace Code.Scripts.Combat
         private EntityStat _statCompo;
         
         [SerializeField] private StatSO hpStat;
-        [SerializeField] private float maxHealth;
-        [SerializeField] private float currentHealth;
+        [SerializeField] private float maxHealth; 
+        public float currentHealth;
         
         public void Initialize(Entity entity)
         {

@@ -19,7 +19,7 @@ namespace Code.Scripts.Enemies
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireSphere(transform.position, DetectRadius);
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, AttackRadius);
         }
 
