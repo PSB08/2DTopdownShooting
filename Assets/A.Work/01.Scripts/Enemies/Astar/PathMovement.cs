@@ -27,6 +27,7 @@ namespace Code.Scripts.Enemies.Astar
             _owner = owner;
             _pathArr = new Vector3[maxPathCount];
             _movement = owner.GetCompo<AgentMovement>();
+            baseTilemap = FindAnyObjectByType<Tilemap>();
         }
 
         public void SetDestination(Vector3 destination)

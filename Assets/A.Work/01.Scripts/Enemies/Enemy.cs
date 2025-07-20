@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Scripts.Enemies.BT;
 using Code.Scripts.Entities;
+using PSB_Lib.ObjectPool.RunTime;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Code.Scripts.Enemies
 {
-    public abstract class Enemy : MonoBehaviour, IComponentOwner
+    public abstract class Enemy : MonoBehaviour, IComponentOwner, IPoolable
     {
         protected Dictionary<Type, IBtEntityComponent> _compoDict;
 
@@ -50,7 +50,17 @@ namespace Code.Scripts.Enemies
         {
             return _compoDict.GetValueOrDefault(type);
         }
-        
-        
+
+
+        public PoolItemSO PoolItem { get; }
+        public void SetUpPool(Pool pool)
+        {
+            
+        }
+
+        public void ResetItem()
+        {
+            
+        }
     }
 }
