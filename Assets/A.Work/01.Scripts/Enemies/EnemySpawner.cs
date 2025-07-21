@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Code.Scripts.UI.InGame;
 using PSB_Lib.Dependencies;
 using PSB_Lib.ObjectPool.RunTime;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace Code.Scripts.Enemies
     {
         [SerializeField] private PoolItemSO enemy;
         [SerializeField] private Transform[] spawnPoints;
+        [SerializeField] private EnemyArrow arrowManager;
         
         private List<Enemy> _spawnedEnemies = new();
         private int _spawnCount = 1;
@@ -38,6 +40,8 @@ namespace Code.Scripts.Enemies
                 
                 _spawnedEnemies.Add(spawnEnemy);
                 
+                arrowManager?.AddEnemy(spawnEnemy);
+                
                 var health = spawnEnemy.GetComponent<EnemyHealth>();
                 if (health != null)
                 {
@@ -47,6 +51,8 @@ namespace Code.Scripts.Enemies
                         health.OnDeadEvent.RemoveListener(onDead);
                         _spawnedEnemies.Remove(spawnEnemy);
 
+                        arrowManager?.RemoveEnemy(spawnEnemy);
+                        
                         if (_spawnedEnemies.Count == 0)
                             OnAllEnemiesDead?.Invoke();
                     };
