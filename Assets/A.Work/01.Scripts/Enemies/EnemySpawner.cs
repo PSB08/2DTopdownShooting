@@ -15,7 +15,7 @@ namespace Code.Scripts.Enemies
         private List<Enemy> _spawnedEnemies = new();
         private int _spawnCount = 1;
 
-        public Action onAllEnemiesDead;
+        public Action OnAllEnemiesDead;
         
         [Inject] private PoolManagerMono _poolManager;
         
@@ -48,7 +48,7 @@ namespace Code.Scripts.Enemies
                         _spawnedEnemies.Remove(spawnEnemy);
 
                         if (_spawnedEnemies.Count == 0)
-                            onAllEnemiesDead?.Invoke();
+                            OnAllEnemiesDead?.Invoke();
                     };
 
                     health.OnDeadEvent.AddListener(onDead);

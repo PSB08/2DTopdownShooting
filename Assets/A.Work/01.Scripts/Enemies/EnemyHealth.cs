@@ -64,11 +64,6 @@ namespace Code.Scripts.Enemies
                 currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
             }
         }
-
-        public void DebugHp()
-        {
-            Debug.Log($"{gameObject.name}: {currentHealth}");
-        }
         
     }
 }

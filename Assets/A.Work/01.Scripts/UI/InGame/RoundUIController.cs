@@ -10,6 +10,7 @@ namespace Code.Scripts.UI.InGame
         [Header("UI References")]
         [SerializeField] private TextMeshProUGUI roundText;
         [SerializeField] private TextMeshProUGUI enemyCountText;
+        [SerializeField] private TextMeshProUGUI countdownText;
 
         [Header("References")]
         [SerializeField] private RoundManager roundManager;
@@ -19,32 +20,73 @@ namespace Code.Scripts.UI.InGame
         {
             if (enemySpawner != null)
             {
-                enemySpawner.onAllEnemiesDead += () =>
-                {
-                    UpdateUI(); // 라운드 넘어갈 때도 업데이트
-                };
+                enemySpawner.OnAllEnemiesDead += UpdateUI;
             }
 
-            UpdateUI(); // 초기 표시
+            if (roundManager != null)
+            {
+                roundManager.OnCountdown += ShowCountdown;
+            }
+
+            UpdateUI();
         }
+
 
         private void Update()
         {
-            UpdateUI(); // 실시간 적 수 갱신
+            UpdateEnemyCount();
         }
 
         private void UpdateUI()
         {
-            if (roundManager != null)
-            {
-                roundText.text = $"ROUND: {roundManager.currentRound + 1}";
-            }
+            UpdateRoundText();
+            UpdateEnemyCount();
+        }
 
-            if (enemySpawner != null)
+        private void UpdateRoundText()
+        {
+            if (roundManager == null || roundText == null)
+                return;
+
+            int displayRound = roundManager.CurrentRound + 1;
+            
+            if (displayRound >= roundManager.MaxRound)
             {
-                enemyCountText.text = $"ENEMIES: {enemySpawner.RemainingEnemyCount}";
+                roundText.text = "FINAL ROUND";
+            }
+            else
+            {
+                roundText.text = $"ROUND: {displayRound}";
             }
         }
+
+        private void UpdateEnemyCount()
+        {
+            if (enemySpawner == null || enemyCountText == null)
+                return;
+
+            enemyCountText.text = $"ENEMIES: {enemySpawner.RemainingEnemyCount}";
+        }
+        
+        private void ShowCountdown(int secondsLeft)
+        {
+            if (countdownText == null) return;
+
+            if (secondsLeft > 0)
+            {
+                roundText.gameObject.SetActive(false);
+                enemyCountText.gameObject.SetActive(false);
+                countdownText.gameObject.SetActive(true);
+                countdownText.text = $"{secondsLeft}";
+            }
+            else
+            {
+                roundText.gameObject.SetActive(true);
+                enemyCountText.gameObject.SetActive(true);
+                countdownText.gameObject.SetActive(false);
+            }
+        }
+        
         
     }
 }
