@@ -2,6 +2,7 @@
 using System.Collections;
 using Code.Scripts.Enemies;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Code.Scripts.Core
 {
@@ -12,7 +13,7 @@ namespace Code.Scripts.Core
         [SerializeField] private EnemySpawner enemySpawner;
 
         public event Action<int> OnCountdown;
-        public event Action OnGameEnd;
+        public UnityEvent OnGameClear;
 
         public int MaxRound => maxRound;
         public int CurrentRound { get; private set; } = 0;
@@ -27,7 +28,7 @@ namespace Code.Scripts.Core
         {
             if (CurrentRound + 1 >= maxRound)
             {
-                EndGame();
+                ClearGame();
             }
             else
             {
@@ -59,9 +60,9 @@ namespace Code.Scripts.Core
             enemySpawner.SpawnEnemies();
         }
         
-        private void EndGame()
+        private void ClearGame()
         {
-            OnGameEnd?.Invoke();
+            OnGameClear?.Invoke();
         }
         
     }

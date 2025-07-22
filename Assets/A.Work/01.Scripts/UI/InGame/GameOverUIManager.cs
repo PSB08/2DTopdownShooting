@@ -1,21 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Code.Scripts.UI.InGame
 {
-    public class GameOverUIManager : MonoBehaviour
+    public class GameOverUIManager : UIManager
     {
-        [SerializeField] private GameObject gameOverUI;
-
-        private void Awake()
+        
+        public void RestartGame()
         {
-            Time.timeScale = 1;
-            gameOverUI.SetActive(false);
-        }
-
-        public void GameOver()
-        {
-            Time.timeScale = 0;
-            gameOverUI.SetActive(true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);    
         }
         
     }
