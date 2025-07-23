@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,9 +22,16 @@ namespace Code.Scripts.UI.Title
 
         public void StartGame()
         {
-            SceneManager.LoadScene(gameScene);
+            StartCoroutine(StartGameCoroutine());
         }
 
+        private IEnumerator StartGameCoroutine()
+        {
+            Debug.Log("Start Game");
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene(gameScene);
+        }
+        
         public void ExitGame()
         {
 #if UNITY_EDITOR
