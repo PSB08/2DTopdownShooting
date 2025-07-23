@@ -14,10 +14,13 @@ namespace Code.Scripts.UI.Title
         [SerializeField] private Button exitBtn;
 
         [SerializeField] private string gameScene;
+        
+        [SerializeField] private GameObject soundUIPanel;
 
         private void Awake()
         {
             Time.timeScale = 1f;
+            soundUIPanel.SetActive(false);
         }
 
         public void StartGame()
@@ -43,7 +46,12 @@ namespace Code.Scripts.UI.Title
 
         public void SettingGame()
         {
-            Debug.Log("Setting");
+            soundUIPanel.SetActive(true);
+        }
+        
+        public void CloseSettingUIPanel()
+        {
+            soundUIPanel.SetActive(false);
         }
 
     }
