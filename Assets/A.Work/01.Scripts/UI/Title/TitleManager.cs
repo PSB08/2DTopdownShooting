@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,6 +12,11 @@ namespace Code.Scripts.UI.Title
         [SerializeField] private Button exitBtn;
 
         [SerializeField] private string gameScene;
+
+        private void Awake()
+        {
+            Time.timeScale = 1f;
+        }
 
         public void StartGame()
         {

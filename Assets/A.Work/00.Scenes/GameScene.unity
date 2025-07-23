@@ -297,7 +297,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 740582630}
-        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.GameClearUIManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.GameClearIuiManager, Assembly-CSharp
         m_MethodName: GoMainMenu
         m_Mode: 1
         m_Arguments:
@@ -9459,7 +9459,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 740582629}
-        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.GameOverUIManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.GameOverIuiManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -10472,8 +10472,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 740582628}
-  - component: {fileID: 740582629}
   - component: {fileID: 740582630}
+  - component: {fileID: 740582629}
   m_Layer: 0
   m_Name: GameStateManager
   m_TagString: Untagged
@@ -122131,7 +122131,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 740582630}
-        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.UIManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.GameClearUIManager, Assembly-CSharp
         m_MethodName: OpenUIPanel
         m_Mode: 1
         m_Arguments:
@@ -125535,7 +125535,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 740582629}
-        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.UIManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.GameOverIuiManager, Assembly-CSharp
         m_MethodName: OpenUIPanel
         m_Mode: 1
         m_Arguments:
@@ -126394,7 +126394,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 740582629}
-        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.UIManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.GameOverIuiManager, Assembly-CSharp
         m_MethodName: OpenUIPanel
         m_Mode: 1
         m_Arguments:
