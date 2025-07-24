@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Code.Scripts.UI
 {
-    public class SoundUIManager : MonoBehaviour
+    public class SoundManager : MonoBehaviour
     {
         
         [Header("Slider")]
@@ -38,10 +38,6 @@ namespace Code.Scripts.UI
             LoadVolume();
             LoadMuteStates();
             UpdateButtonIcons();
-        
-            masterMuteBtn.onClick.AddListener(ToggleMasterMute);
-            musicMuteBtn.onClick.AddListener(ToggleMusicMute);
-            sfxMuteBtn.onClick.AddListener(ToggleSfxMute);
         }
         
         public void ButtonSound()
