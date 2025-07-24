@@ -104,7 +104,7 @@ namespace Code.Scripts.UI
         }
 
 
-        private void ToggleMasterMute()
+        public void ToggleMasterMute()
         {
             _isMasterMuted = !_isMasterMuted;
             float volume = _isMasterMuted ? 0f : masterSlider.value;
@@ -113,7 +113,7 @@ namespace Code.Scripts.UI
             UpdateButtonIcons();
         }
         
-        private void ToggleMusicMute()
+        public void ToggleMusicMute()
         {
             _isMusicMuted = !_isMusicMuted;
             float volume = _isMusicMuted ? 0f : musicSlider.value;
@@ -122,7 +122,7 @@ namespace Code.Scripts.UI
             UpdateButtonIcons();
         }
 
-        private void ToggleSfxMute()
+        public void ToggleSfxMute()
         {
             _isSfxMuted = !_isSfxMuted;
             float volume = _isSfxMuted ? 0f : sfxSlider.value;
