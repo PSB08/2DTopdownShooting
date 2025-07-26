@@ -20,6 +20,8 @@ namespace Code.Scripts.Enemies
         [SerializeField] private float maxHealth;
         public float currentHealth;
         
+        public float MaxHealth => maxHealth;
+        
         public void Initialize(IComponentOwner owner)
         {
             _entity = owner;

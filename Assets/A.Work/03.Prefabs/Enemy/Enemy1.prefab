@@ -1070,9 +1070,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2215776167891996314}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 50
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1762,7 +1762,7 @@ MonoBehaviour:
   statOverrides:
   - stat: {fileID: 11400000, guid: 3a79e21e6a425b34480cc3c2d427cf70, type: 2}
     isUseOverride: 1
-    overrideValue: 100
+    overrideValue: 50
   - stat: {fileID: 11400000, guid: aba835fab962cc14d85d1a6e58d1600d, type: 2}
     isUseOverride: 1
     overrideValue: 3

@@ -81,10 +81,20 @@ namespace Code.Scripts.UI.InGame
             }
             else
             {
-                roundText.gameObject.SetActive(true);
-                enemyCountText.gameObject.SetActive(true);
-                countdownText.gameObject.SetActive(false);
+                roundText.gameObject.SetActive(false);
+                enemyCountText.gameObject.SetActive(false);
+                countdownText.gameObject.SetActive(true);
+                countdownText.text = "라운드 시작";
+
+                Invoke(nameof(HideCountdown), 1f);
             }
+        }
+        
+        private void HideCountdown()
+        {
+            countdownText.gameObject.SetActive(false);
+            roundText.gameObject.SetActive(true);
+            enemyCountText.gameObject.SetActive(true);
         }
         
         

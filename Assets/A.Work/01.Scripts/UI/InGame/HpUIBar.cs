@@ -19,6 +19,11 @@ namespace Code.Scripts.UI.InGame
             _health = entity.GetCompo<EntityHealth>();
         }
 
+        private void Awake()
+        {
+            slider.maxValue = _health.MaxHealth;
+        }
+
         private void Update()
         {
             slider.value = _health.currentHealth;

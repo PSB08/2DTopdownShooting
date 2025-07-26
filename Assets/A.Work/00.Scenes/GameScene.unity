@@ -1768,7 +1768,7 @@ GameObject:
   - component: {fileID: 288105997}
   - component: {fileID: 288105998}
   m_Layer: 0
-  m_Name: SpawnTrans5
+  m_Name: SpawnTrans6
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1783,7 +1783,7 @@ Transform:
   m_GameObject: {fileID: 288105996}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.1, y: -28.7, z: 0}
+  m_LocalPosition: {x: -40.2, y: -36.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 296275157}
   - component: {fileID: 296275158}
   m_Layer: 0
-  m_Name: SpawnTrans7
+  m_Name: SpawnTrans8
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1966,7 +1966,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 350, y: 150}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336999495
 MonoBehaviour:
@@ -1992,8 +1992,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28905ddfa2901754286553790fbbc515, type: 2}
+  m_sharedMaterial: {fileID: 4865067560792392490, guid: 28905ddfa2901754286553790fbbc515, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &336999496
@@ -2310,7 +2310,7 @@ MonoBehaviour:
     overrideValue: 8
   - stat: {fileID: 11400000, guid: 399a061c3613a67499960b95c9968938, type: 2}
     isUseOverride: 1
-    overrideValue: 5
+    overrideValue: 10
 --- !u!1 &384888596
 GameObject:
   m_ObjectHideFlags: 0
@@ -11438,8 +11438,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28905ddfa2901754286553790fbbc515, type: 2}
+  m_sharedMaterial: {fileID: 4865067560792392490, guid: 28905ddfa2901754286553790fbbc515, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11887,7 +11887,7 @@ GameObject:
   - component: {fileID: 674938669}
   - component: {fileID: 674938670}
   m_Layer: 0
-  m_Name: SpawnTrans10
+  m_Name: SpawnTrans5
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -12403,93 +12403,6 @@ Transform:
   - {fileID: 188529914}
   m_Father: {fileID: 452357797}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
---- !u!1 &778678600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 778678601}
-  - component: {fileID: 778678602}
-  m_Layer: 0
-  m_Name: SpawnTrans8
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &778678601
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778678600}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.1, y: 42.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1356489387}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &778678602
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778678600}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 159162437
-  m_SortingLayer: 6
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3fc68d0a941e841aa85099c61c702fe9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &796586107
 GameObject:
   m_ObjectHideFlags: 0
@@ -13543,7 +13456,7 @@ GameObject:
   - component: {fileID: 995803441}
   - component: {fileID: 995803442}
   m_Layer: 0
-  m_Name: SpawnTrans6
+  m_Name: SpawnTrans7
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -69488,8 +69401,8 @@ Tilemap:
   - first: {x: -2, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -124627,14 +124540,14 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 935947a34a371484282c94f29b7547bd, type: 2}
-  - m_RefCount: 11022
+  - m_RefCount: 11023
     m_Data: {fileID: 11400000, guid: 2e64cf433068f4d4cbdef4ea7e49c435, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: -2113297493, guid: f6630e18bc28ef449aead0a85e2a37ed, type: 3}
-  - m_RefCount: 11022
+  - m_RefCount: 11023
     m_Data: {fileID: -307728029, guid: cf2370711d76f3545a619e5fda213bf4, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 11025
@@ -124726,8 +124639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0652c723724449db010c90489ec2348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRound: 1
-  baseSpawnCount: 1
+  maxRound: 15
+  baseSpawnCount: 2
   enemySpawner: {fileID: 1356489388}
   OnGameClear:
     m_PersistentCalls:
@@ -125241,12 +125154,11 @@ Transform:
   - {fileID: 2055136711}
   - {fileID: 2050613091}
   - {fileID: 129458926}
+  - {fileID: 674938669}
   - {fileID: 288105997}
   - {fileID: 995803441}
   - {fileID: 296275157}
-  - {fileID: 778678601}
   - {fileID: 92090157}
-  - {fileID: 674938669}
   m_Father: {fileID: 19285863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1356489388
@@ -125267,12 +125179,11 @@ MonoBehaviour:
   - {fileID: 2055136711}
   - {fileID: 2050613091}
   - {fileID: 129458926}
+  - {fileID: 674938669}
   - {fileID: 288105997}
   - {fileID: 995803441}
   - {fileID: 296275157}
-  - {fileID: 778678601}
   - {fileID: 92090157}
-  - {fileID: 674938669}
   arrowManager: {fileID: 1254907026}
 --- !u!1 &1360655954
 GameObject:
@@ -126686,8 +126597,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28905ddfa2901754286553790fbbc515, type: 2}
+  m_sharedMaterial: {fileID: 4865067560792392490, guid: 28905ddfa2901754286553790fbbc515, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -129692,7 +129603,7 @@ MonoBehaviour:
   statOverrides:
   - stat: {fileID: 11400000, guid: 89b020ac3e6f86d4e8408cd17147f297, type: 2}
     isUseOverride: 1
-    overrideValue: 1
+    overrideValue: 500
 --- !u!114 &2065483048
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,10 @@ namespace Code.Scripts.Core
         public event Action<int> OnCountdown;
         public UnityEvent OnGameClear;
 
+        private float _countdown = 3f;
+        
+        public int Countdown => (int)_countdown;
+        
         public int MaxRound => maxRound;
         public int CurrentRound { get; private set; } = 0;
 
@@ -39,15 +43,13 @@ namespace Code.Scripts.Core
 
         private IEnumerator NextRoundDelay()
         {
-            float countdown = 3f;
-            
-            OnCountdown?.Invoke((int)countdown);
+            OnCountdown?.Invoke((int)_countdown);
 
-            while (countdown > 0)
+            while (_countdown > 0)
             {
                 yield return new WaitForSeconds(1f);
-                countdown--;
-                OnCountdown?.Invoke((int)countdown);
+                _countdown--;
+                OnCountdown?.Invoke((int)_countdown);
             }
             
             StartNextRound();

@@ -1,4 +1,5 @@
-﻿using Code.Scripts.Enemies;
+﻿using System;
+using Code.Scripts.Enemies;
 using Code.Scripts.Enemies.BT;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +18,12 @@ namespace Code.Scripts.UI.InGame
             _owner = owner;
             _health = owner.GetCompo<EnemyHealth>();
         }
-        
+
+        private void Awake()
+        {
+            slider.maxValue = _health.MaxHealth;
+        }
+
         private void Update()
         {
             slider.value = _health.currentHealth;

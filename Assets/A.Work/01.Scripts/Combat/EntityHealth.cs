@@ -14,6 +14,8 @@ namespace Code.Scripts.Combat
         [SerializeField] private float maxHealth; 
         public float currentHealth;
         
+        public float MaxHealth => maxHealth;
+        
         public void Initialize(Entity entity)
         {
             _entity = entity;
