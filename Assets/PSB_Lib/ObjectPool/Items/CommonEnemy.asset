@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CommonEnemy
   m_EditorClassIdentifier: 
   poolingName: CommonEnemy
-  prefab: {fileID: 5720636692231782182, guid: 518aec08f6c1fe240887f7eed5a612d8, type: 3}
+  prefab: {fileID: 1934225629983306624, guid: 8a146a19af33f78428c81b3351e5c6e4, type: 3}
   initCount: 50
