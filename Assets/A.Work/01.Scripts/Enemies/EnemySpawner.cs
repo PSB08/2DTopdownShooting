@@ -10,7 +10,7 @@ namespace Code.Scripts.Enemies
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private PoolItemSO enemy;
+        [SerializeField] private List<PoolItemSO> enemies;
         [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private EnemyArrow arrowManager;
         
@@ -34,14 +34,15 @@ namespace Code.Scripts.Enemies
 
             for (int i = 0; i < _spawnCount; i++)
             {
-                var spawnEnemy = _poolManager.Pop<Enemy>(enemy);
+                var randomEnemySO = enemies[UnityEngine.Random.Range(0, enemies.Count)];
+                var spawnEnemy = _poolManager.Pop<Enemy>(randomEnemySO);
+
                 var randomPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
                 spawnEnemy.transform.position = randomPoint.position;
-                
+
                 _spawnedEnemies.Add(spawnEnemy);
-                
                 arrowManager?.AddEnemy(spawnEnemy);
-                
+
                 var health = spawnEnemy.GetComponent<EnemyHealth>();
                 if (health != null)
                 {
@@ -50,13 +51,10 @@ namespace Code.Scripts.Enemies
                     {
                         health.OnDeadEvent.RemoveListener(onDead);
                         _spawnedEnemies.Remove(spawnEnemy);
-
                         arrowManager?.RemoveEnemy(spawnEnemy);
-                        
                         if (_spawnedEnemies.Count == 0)
                             OnAllEnemiesDead?.Invoke();
                     };
-
                     health.OnDeadEvent.AddListener(onDead);
                 }
                 else
@@ -65,6 +63,7 @@ namespace Code.Scripts.Enemies
                 }
             }
         }
+
 
         
         
