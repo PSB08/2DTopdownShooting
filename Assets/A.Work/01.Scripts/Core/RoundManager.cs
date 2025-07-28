@@ -10,22 +10,19 @@ namespace Code.Scripts.Core
     {
         [SerializeField] private int maxRound = 15;
         [SerializeField] private int baseSpawnCount = 2;
+        [SerializeField] private float countdownSeconds = 3f;
         [SerializeField] private EnemySpawner enemySpawner;
 
         public event Action<int> OnCountdown;
         public UnityEvent OnGameClear;
 
-        private float _countdown = 3f;
-        
-        public int Countdown => (int)_countdown;
-        
         public int MaxRound => maxRound;
         public int CurrentRound { get; private set; } = 0;
 
         private void Start()
         {
             enemySpawner.OnAllEnemiesDead += OnRoundClear;
-            StartNextRound();
+            StartCoroutine(NextRoundDelay()); 
         }
 
         private void OnRoundClear()
@@ -43,29 +40,32 @@ namespace Code.Scripts.Core
 
         private IEnumerator NextRoundDelay()
         {
-            OnCountdown?.Invoke((int)_countdown);
+            float countdown = countdownSeconds;
 
-            while (_countdown > 0)
+            OnCountdown?.Invoke((int)countdown);
+
+            while (countdown > 0)
             {
                 yield return new WaitForSeconds(1f);
-                _countdown--;
-                OnCountdown?.Invoke((int)_countdown);
+                countdown--;
+                OnCountdown?.Invoke((int)countdown);
             }
-            
+
             StartNextRound();
         }
-        
+
         private void StartNextRound()
         {
             int spawnCount = baseSpawnCount + CurrentRound;
             enemySpawner.SetSpawnCount(spawnCount);
             enemySpawner.SpawnEnemies();
         }
-        
+
         private void ClearGame()
         {
             OnGameClear?.Invoke();
         }
+        
         
     }
 }

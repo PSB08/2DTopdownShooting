@@ -996,8 +996,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.8749985}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6003735607444792145}
   - {fileID: 1480243367862034088}
@@ -3343,8 +3343,8 @@ GameObject:
   - component: {fileID: 7794945432636330787}
   - component: {fileID: 688754816829135798}
   - component: {fileID: 6301861680214534793}
-  - component: {fileID: 5058491681251836217}
   - component: {fileID: 7124927925772778437}
+  - component: {fileID: 5824842831132253889}
   m_Layer: 8
   m_Name: TankEnemy
   m_TagString: Untagged
@@ -3559,20 +3559,6 @@ MonoBehaviour:
   hpStat: {fileID: 11400000, guid: 3a79e21e6a425b34480cc3c2d427cf70, type: 2}
   maxHealth: 0
   currentHealth: 0
---- !u!114 &5058491681251836217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5367696020490595612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b66ba5461a470fb56b69f8b0c45452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _nexus: {fileID: 0}
 --- !u!114 &7124927925772778437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3586,6 +3572,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 6161521301280254885}
+--- !u!114 &5824842831132253889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367696020490595612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b66ba5461a470fb56b69f8b0c45452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5371289994650486396
 GameObject:
   m_ObjectHideFlags: 0
@@ -5022,7 +5020,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6421860830317540414}

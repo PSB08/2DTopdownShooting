@@ -1,4 +1,5 @@
-﻿using Code.Scripts.Combat;
+﻿using System;
+using Code.Scripts.Combat;
 using Code.Scripts.Entities;
 using PSB_Lib.StatSystem;
 using UnityEngine;
@@ -7,8 +8,6 @@ namespace Code.Scripts.Players.States
 {
     public class PlayerAttackCompo : MonoBehaviour, IEntityComponent, IAfterInitialize
     {
-        #region Temp Attack
-        
         [Header("Attack Damage")]
         [SerializeField] private StatSO damageStat;
         private float _damage = 5f;
@@ -19,6 +18,20 @@ namespace Code.Scripts.Players.States
         private EntityAnimatorTrigger _animatorTrigger;
         
         private bool isAttacking = false;
+        
+        public float Damage => _damage;
+        
+        #region Temp
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                _damage = 150f;
+            }
+        }
+
+        #endregion 
         
         public void Initialize(Entity entity)
         {
@@ -68,8 +81,6 @@ namespace Code.Scripts.Players.States
             isAttacking = false;
             _damageCaster._hitTargets.Clear();
         }
-        
-        #endregion
         
     }
 }
