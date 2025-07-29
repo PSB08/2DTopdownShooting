@@ -9,7 +9,7 @@ namespace Code.Scripts.Players.States
     public class PlayerAttackCompo : MonoBehaviour, IEntityComponent, IAfterInitialize
     {
         [Header("Attack Damage")]
-        [SerializeField] private StatSO damageStat;
+        [field: SerializeField] public StatSO damageStat;
         private float _damage = 5f;
         
         private Entity _entity;

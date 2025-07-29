@@ -2,6 +2,7 @@
 using System.Collections;
 using Code.Scripts.Core;
 using Code.Scripts.Enemies;
+using Code.Scripts.Item;
 using PSB_Lib.Dependencies;
 using TMPro;
 using UnityEngine;
@@ -14,25 +15,17 @@ namespace Code.Scripts.UI.InGame
         [SerializeField] private TextMeshProUGUI roundText;
         [SerializeField] private TextMeshProUGUI enemyCountText;
         [SerializeField] private TextMeshProUGUI countdownText;
-        [SerializeField] private GameObject testPanel;
 
         [Header("References")]
         [Inject] private RoundManager roundManager;
         [Inject] private EnemySpawner enemySpawner;
+        public PlayerLevelUpUI playerLevelUpUI;
 
         public void Test()
         {
-            StartCoroutine(TestCoroutine());
+            playerLevelUpUI.HandleLevelUpUIShow();
         }
-
-        private IEnumerator TestCoroutine()
-        {
-            testPanel.SetActive(true);
-            yield return new WaitForSeconds(1);
-            testPanel.SetActive(false);
-            roundManager.NotifyRoundEventFinished();
-        }
-
+        
         private void Start()
         {
             if (enemySpawner != null)
@@ -44,10 +37,14 @@ namespace Code.Scripts.UI.InGame
             {
                 roundManager.OnCountdown += ShowCountdown;
             }
-
+            
             UpdateUI();
         }
 
+        public void OnLevelUpFinished()
+        {
+            roundManager.NotifyRoundEventFinished();
+        }
 
         private void Update()
         {

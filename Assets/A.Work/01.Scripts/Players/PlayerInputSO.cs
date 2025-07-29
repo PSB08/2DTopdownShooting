@@ -11,6 +11,7 @@ namespace Code.Scripts.Players
         public event Action OnAttackPressed;
 
         public Vector2 MovementKey { get; private set; }
+        public bool IsCanAttack = true;
         private Controls _controls;
 
         private void OnEnable()
@@ -35,6 +36,8 @@ namespace Code.Scripts.Players
 
         public void OnAttack(InputAction.CallbackContext context)
         {
+            if (!IsCanAttack) return;
+            
             if (context.performed)
                 OnAttackPressed?.Invoke();
         }
