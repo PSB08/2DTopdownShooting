@@ -7,7 +7,8 @@ using UnityEngine.Events;
 
 namespace Code.Scripts.Enemies
 {
-    public class EnemySpawner : MonoBehaviour
+    [Provide]
+    public class EnemySpawner : MonoBehaviour, IDependencyProvider
     {
         [SerializeField] private List<PoolItemSO> enemies;
         [SerializeField] private Transform[] spawnPoints;

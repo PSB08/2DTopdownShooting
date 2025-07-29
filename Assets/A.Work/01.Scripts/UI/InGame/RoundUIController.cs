@@ -1,5 +1,8 @@
-﻿using Code.Scripts.Core;
+﻿using System;
+using System.Collections;
+using Code.Scripts.Core;
 using Code.Scripts.Enemies;
+using PSB_Lib.Dependencies;
 using TMPro;
 using UnityEngine;
 
@@ -11,10 +14,24 @@ namespace Code.Scripts.UI.InGame
         [SerializeField] private TextMeshProUGUI roundText;
         [SerializeField] private TextMeshProUGUI enemyCountText;
         [SerializeField] private TextMeshProUGUI countdownText;
+        [SerializeField] private GameObject testPanel;
 
         [Header("References")]
-        [SerializeField] private RoundManager roundManager;
-        [SerializeField] private EnemySpawner enemySpawner;
+        [Inject] private RoundManager roundManager;
+        [Inject] private EnemySpawner enemySpawner;
+
+        public void Test()
+        {
+            StartCoroutine(TestCoroutine());
+        }
+
+        private IEnumerator TestCoroutine()
+        {
+            testPanel.SetActive(true);
+            yield return new WaitForSeconds(1);
+            testPanel.SetActive(false);
+            roundManager.NotifyRoundEventFinished();
+        }
 
         private void Start()
         {

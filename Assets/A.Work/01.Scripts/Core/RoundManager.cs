@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Collections;
 using Code.Scripts.Enemies;
+using PSB_Lib.Dependencies;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Code.Scripts.Core
 {
-    public class RoundManager : MonoBehaviour
+    [Provide]
+    public class RoundManager : MonoBehaviour, IDependencyProvider
     {
         [SerializeField] private int maxRound = 15;
         [SerializeField] private int baseSpawnCount = 2;
         [SerializeField] private float countdownSeconds = 3f;
-        [SerializeField] private EnemySpawner enemySpawner;
+        
+        
+        [Inject] private EnemySpawner enemySpawner;
 
         public event Action<int> OnCountdown;
         public UnityEvent OnGameClear;
+        public UnityEvent OnRoundClearEvent;
 
         public int MaxRound => maxRound;
         public int CurrentRound { get; private set; } = 0;
+        
+        private bool _waitEvent = false;
 
         private void Start()
         {
@@ -34,8 +41,19 @@ namespace Code.Scripts.Core
             else
             {
                 CurrentRound++;
-                StartCoroutine(NextRoundDelay());
+                _waitEvent = true;
+                OnRoundClearEvent?.Invoke();
             }
+        }
+        
+        /// <summary>
+        /// 외부에서 실행할 RoundManager 메서드
+        /// </summary>
+        public void NotifyRoundEventFinished()
+        {
+            if (!_waitEvent) return;
+            _waitEvent = false;
+            StartCoroutine(NextRoundDelay());
         }
 
         private IEnumerator NextRoundDelay()
