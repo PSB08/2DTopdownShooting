@@ -20,11 +20,6 @@ namespace Code.Scripts.UI.InGame
         [Inject] private RoundManager roundManager;
         [Inject] private EnemySpawner enemySpawner;
         public PlayerLevelUpUI playerLevelUpUI;
-
-        public void Test()
-        {
-            playerLevelUpUI.HandleLevelUpUIShow();
-        }
         
         private void Start()
         {
@@ -41,11 +36,6 @@ namespace Code.Scripts.UI.InGame
             UpdateUI();
         }
 
-        public void OnLevelUpFinished()
-        {
-            roundManager.NotifyRoundEventFinished();
-        }
-
         private void Update()
         {
             UpdateEnemyCount();
@@ -55,6 +45,16 @@ namespace Code.Scripts.UI.InGame
         {
             UpdateRoundText();
             UpdateEnemyCount();
+        }
+        
+        public void NextRoundUI()
+        {
+            playerLevelUpUI.HandleLevelUpUIShow();
+        }
+        
+        public void OnLevelUpFinished()
+        {
+            roundManager.NotifyRoundEventFinished();
         }
 
         private void UpdateRoundText()

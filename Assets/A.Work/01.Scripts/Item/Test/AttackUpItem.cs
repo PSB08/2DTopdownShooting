@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Scripts.Item.Test
 {
-    public class TestItem : LevelUpItem
+    public class AttackUpItem : LevelUpItem
     {
         private PlayerAttackCompo _attackCompo;
 
