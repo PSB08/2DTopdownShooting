@@ -1,5 +1,4 @@
 using System;
-using Code.Scripts.Enemies.BT;
 using Unity.Behavior;
 using Unity.Properties;
 using UnityEngine;
@@ -17,6 +16,18 @@ namespace Code.Scripts.Enemies.BT.Actions
 
         protected override Status OnStart()
         {
+            if (Override.Value == null)
+            {
+                Debug.LogWarning("Override is null in BT");
+                return Status.Failure;
+            }
+
+            if (Override.Value._player == null || Override.Value._nexus == null)
+            {
+                Debug.LogWarning("Player or Nexus is null in EnemyOverride");
+                return Status.Failure;
+            }
+
             Target.Value = Override.Value._player;
             Nexus.Value = Override.Value._nexus;
             return Status.Success;

@@ -18,7 +18,7 @@ namespace Code.Scripts.UI.InGame
 
         private void Update()
         {
-            damageText.text = _attackCompo.Damage.ToString();
+            damageText.text = $"Atk : {_attackCompo.Damage.ToString()}";
         }
         
         

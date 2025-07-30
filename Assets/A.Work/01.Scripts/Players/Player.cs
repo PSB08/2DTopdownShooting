@@ -11,20 +11,23 @@ namespace Code.Scripts.Players
         [SerializeField] private StateDataSO[] states;
 
         private EntityStateMachine _stateMachine;
+        private EntityAnimatorTrigger _trigger;
         
         protected override void Awake()
         {
             base.Awake();
             _stateMachine = new EntityStateMachine(this, states);
+            _trigger = GetCompo<EntityAnimatorTrigger>();
         }
 
         private void OnDestroy()
         {
-            
+            _trigger.OnDeadEndTrigger -= DestroyEntity;
         }
-
+        
         protected override void Start()
         {
+            _trigger.OnDeadEndTrigger += DestroyEntity;
             _stateMachine.ChangeState("IDLE");
         }
 
@@ -40,6 +43,10 @@ namespace Code.Scripts.Players
         
         public void ChangeState(string newStateName) => _stateMachine.ChangeState(newStateName);
 
+        public void ChangeDead()
+        {
+            ChangeState("DEAD");
+        }
         
     }
 }

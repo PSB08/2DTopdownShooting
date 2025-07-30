@@ -9,6 +9,7 @@ namespace Code.Scripts.Entities
         public Action OnStartAttackCast;
         public Action OnEndAttackCast;
         public Action OnDamageCastTrigger;
+        public Action OnDeadEndTrigger;
         
         private Entity _entity;
 
@@ -21,6 +22,12 @@ namespace Code.Scripts.Entities
         {
             OnAnimationEndTrigger?.Invoke();
         }
+
+        private void OnDeadAnimationEnd()
+        {
+            OnDeadEndTrigger?.Invoke();
+        }
+        
         private void DamageCast() => OnDamageCastTrigger?.Invoke();
         private void StartCast() => OnStartAttackCast?.Invoke();
         private void EndCast() => OnEndAttackCast?.Invoke();

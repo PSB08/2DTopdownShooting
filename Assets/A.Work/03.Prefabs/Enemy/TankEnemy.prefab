@@ -3344,7 +3344,7 @@ GameObject:
   - component: {fileID: 688754816829135798}
   - component: {fileID: 6301861680214534793}
   - component: {fileID: 7124927925772778437}
-  - component: {fileID: 5824842831132253889}
+  - component: {fileID: -3176282752392683676}
   m_Layer: 8
   m_Name: TankEnemy
   m_TagString: Untagged
@@ -3359,7 +3359,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5367696020490595612}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3377,7 +3377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.6, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724118319248565718
@@ -3572,7 +3572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 6161521301280254885}
---- !u!114 &5824842831132253889
+--- !u!114 &-3176282752392683676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3584,6 +3584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b66ba5461a470fb56b69f8b0c45452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _nexus: {fileID: 0}
 --- !u!1 &5371289994650486396
 GameObject:
   m_ObjectHideFlags: 0

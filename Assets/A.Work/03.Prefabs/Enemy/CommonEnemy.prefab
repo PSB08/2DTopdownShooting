@@ -1054,8 +1054,8 @@ GameObject:
   - component: {fileID: 9161651262029694625}
   - component: {fileID: 4488681761058896244}
   - component: {fileID: 5693883034675106876}
-  - component: {fileID: 4377989280869047291}
   - component: {fileID: 5091070036207271653}
+  - component: {fileID: -4723005407052952022}
   m_Layer: 8
   m_Name: CommonEnemy
   m_TagString: Untagged
@@ -1088,7 +1088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.97, y: 15.19}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2567286160311562926
@@ -1270,20 +1270,6 @@ MonoBehaviour:
   hpStat: {fileID: 11400000, guid: 3a79e21e6a425b34480cc3c2d427cf70, type: 2}
   maxHealth: 0
   currentHealth: 0
---- !u!114 &4377989280869047291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934225629983306624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b66ba5461a470fb56b69f8b0c45452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _nexus: {fileID: 0}
 --- !u!114 &5091070036207271653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,6 +1283,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 8629598142929969804}
+--- !u!114 &-4723005407052952022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934225629983306624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b66ba5461a470fb56b69f8b0c45452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _nexus: {fileID: 0}
 --- !u!1 &1975635452079995041
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,9 @@ namespace Code.Scripts.Enemies
         [SerializeField] private List<PoolItemSO> enemies;
         [SerializeField] private Transform[] spawnPoints;
         
+        [SerializeField] private Transform player;
+        [SerializeField] private Transform nexus;
+        
         private List<Enemy> _spawnedEnemies = new();
         private int _spawnCount = 1;
 
@@ -36,6 +39,9 @@ namespace Code.Scripts.Enemies
                 var randomEnemySO = enemies[UnityEngine.Random.Range(0, enemies.Count)];
                 var spawnEnemy = _poolManager.Pop<Enemy>(randomEnemySO);
 
+                var over = spawnEnemy.GetCompo<EnemyOverride>();
+                over.SetTargets(player, nexus);
+                
                 var randomPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
                 spawnEnemy.transform.position = randomPoint.position;
 

@@ -10,18 +10,18 @@ namespace Code.Scripts.Enemies
     {
         public Transform _player;
         public Transform _nexus;
-     
+
         private IComponentOwner _owner;
-        
+
         public void Initialize(IComponentOwner owner)
         {
             _owner = owner;
         }
-        
-        private void Awake()
+
+        public void SetTargets(Transform player, Transform nexus)
         {
-            _player = FindAnyObjectByType<Player>().transform;
-            _nexus = FindAnyObjectByType<Nexus>().transform;
+            _player = player;
+            _nexus = nexus;
         }
         
     }

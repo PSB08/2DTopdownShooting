@@ -16,6 +16,8 @@ namespace Code.Scripts.Players
 
         private void OnEnable()
         {
+            IsCanAttack = true;
+            
             if (_controls == null)
             {
                 _controls = new Controls();

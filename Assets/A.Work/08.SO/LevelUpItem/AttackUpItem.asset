@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f9d317fca54313a5a6274cadc40245, type: 3}
   m_Name: AttackUpItem
   m_EditorClassIdentifier: 
-  SkillIcon: {fileID: 21300000, guid: be32bdc704c87480caa40bcbeba59dda, type: 3}
-  Name: AttackPower
-  Description: Increase Player's Attack Power Up
+  SkillIcon: {fileID: 21300000, guid: 23a15045b06da452d8eb1429a84e2621, type: 3}
+  Name: "\uACF5\uACA9\uB825 \uC99D\uAC00"
+  Description: "\uD50C\uB808\uC774\uC5B4\uC758 \uACF5\uACA9\uB825\uC744 \n10 \uC99D\uAC00\uC2DC\uD0B5\uB2C8\uB2E4."

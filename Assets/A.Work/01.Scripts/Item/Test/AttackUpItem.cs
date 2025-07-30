@@ -16,7 +16,7 @@ namespace Code.Scripts.Item.Test
                 Debug.LogError("No have attackCompo");
             Debug.Log("AttackItemSelected!!");
 
-            statCompo.IncreaseBaseValue(_attackCompo.damageStat, 5f);
+            statCompo.IncreaseBaseValue(_attackCompo.damageStat, 10f);
             _levelUpItemSO.selectCount++;
         }
         
