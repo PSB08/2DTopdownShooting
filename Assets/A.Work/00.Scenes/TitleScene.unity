@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 61995658}
   - component: {fileID: 61995657}
   - component: {fileID: 61995656}
+  - component: {fileID: 61995659}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -251,6 +252,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61995654}
   m_CullTransparentMesh: 1
+--- !u!114 &61995659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61995654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af750b715c4193af61b3c054b48883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: 1.2
+  duration: 0.2
+  easeType: 27
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  canColorChange: 0
 --- !u!4 &141700431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6438113656578248682, guid: a098154c497b1a6498673dede6305948, type: 3}
@@ -428,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3929085, g: 0.3893041, b: 0.9308176, a: 1}
+  m_Color: {r: 0.37106913, g: 0.37106913, b: 0.37106913, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -702,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.408805, g: 0.408805, b: 0.408805, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1328,8 +1346,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1410,6 +1428,7 @@ GameObject:
   - component: {fileID: 835850593}
   - component: {fileID: 835850592}
   - component: {fileID: 835850591}
+  - component: {fileID: 835850594}
   m_Layer: 5
   m_Name: SettingBtn
   m_TagString: Untagged
@@ -1530,6 +1549,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835850589}
   m_CullTransparentMesh: 1
+--- !u!114 &835850594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835850589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af750b715c4193af61b3c054b48883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: 1.2
+  duration: 0.2
+  easeType: 27
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  canColorChange: 0
 --- !u!1 &837335306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,8 +2012,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2112,8 +2148,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2348,6 +2384,7 @@ GameObject:
   - component: {fileID: 1362798064}
   - component: {fileID: 1362798063}
   - component: {fileID: 1362798062}
+  - component: {fileID: 1362798065}
   m_Layer: 5
   m_Name: SFXMuteBtn
   m_TagString: Untagged
@@ -2468,6 +2505,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362798060}
   m_CullTransparentMesh: 1
+--- !u!114 &1362798065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362798060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af750b715c4193af61b3c054b48883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: 1.2
+  duration: 0.2
+  easeType: 27
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  canColorChange: 0
 --- !u!1 &1424505149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2480,6 +2534,7 @@ GameObject:
   - component: {fileID: 1424505153}
   - component: {fileID: 1424505152}
   - component: {fileID: 1424505151}
+  - component: {fileID: 1424505154}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -2600,6 +2655,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424505149}
   m_CullTransparentMesh: 1
+--- !u!114 &1424505154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424505149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af750b715c4193af61b3c054b48883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: 1.2
+  duration: 0.2
+  easeType: 27
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  canColorChange: 0
 --- !u!1 &1464820761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,6 +2975,7 @@ GameObject:
   - component: {fileID: 1684317243}
   - component: {fileID: 1684317242}
   - component: {fileID: 1684317241}
+  - component: {fileID: 1684317244}
   m_Layer: 5
   m_Name: MasterMuteBtn
   m_TagString: Untagged
@@ -3023,6 +3096,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684317239}
   m_CullTransparentMesh: 1
+--- !u!114 &1684317244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684317239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af750b715c4193af61b3c054b48883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: 1.2
+  duration: 0.2
+  easeType: 27
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  canColorChange: 0
 --- !u!1 &1711076640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,8 +3495,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3487,6 +3577,7 @@ GameObject:
   - component: {fileID: 1946535115}
   - component: {fileID: 1946535114}
   - component: {fileID: 1946535113}
+  - component: {fileID: 1946535116}
   m_Layer: 5
   m_Name: MusicMuteBtn
   m_TagString: Untagged
@@ -3607,6 +3698,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946535111}
   m_CullTransparentMesh: 1
+--- !u!114 &1946535116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946535111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af750b715c4193af61b3c054b48883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: 1.2
+  duration: 0.2
+  easeType: 27
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  canColorChange: 0
 --- !u!1 &1952861725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3735,14 +3843,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.40251565, g: 0.40251565, b: 0.40251565, a: 1}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 1f5bb2fb51b8547fd970e4c3906cb2d3, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
