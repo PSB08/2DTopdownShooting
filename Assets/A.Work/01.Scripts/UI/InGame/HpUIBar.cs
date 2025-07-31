@@ -21,7 +21,7 @@ namespace Code.Scripts.UI.InGame
             _health = entity.GetCompo<EntityHealth>();
         }
 
-        private void Awake()
+        private void Start()
         {
             slider.maxValue = _health.MaxHealth;
             hpTxt.text = $"{_health.currentHealth}/{_health.MaxHealth}";

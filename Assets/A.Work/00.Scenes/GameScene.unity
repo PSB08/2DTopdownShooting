@@ -127645,6 +127645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1314800282}
+  - component: {fileID: 1314800283}
   m_Layer: 0
   m_Name: NexusHitMessage
   m_TagString: Untagged
@@ -127667,6 +127668,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 19285863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1314800283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314800281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab5dfc9db5644a7b1d021b0cd2e05e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMessage: {fileID: 1679136509}
+  appearOffsetY: -1000
+  moveDuration: 0.5
+  stayDuration: 1.5
+  easeIn: 27
+  easeOut: 26
 --- !u!1 &1316713088
 GameObject:
   m_ObjectHideFlags: 0
@@ -131426,7 +131445,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnHitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1314800283}
+        m_TargetAssemblyTypeName: Code.Scripts.UI.InGame.NexusHitScript, Assembly-CSharp
+        m_MethodName: HitMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeadEvent:
     m_PersistentCalls:
       m_Calls:
@@ -131487,6 +131518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1981671592}
   hpTxt: {fileID: 623445047}
+  _health: {fileID: 0}
 --- !u!1 &2086438378
 GameObject:
   m_ObjectHideFlags: 0
@@ -132442,6 +132474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1495017642}
   hpTxt: {fileID: 246805384}
+  _health: {fileID: 4267736198321583935}
 --- !u!1 &1293741214741600385
 GameObject:
   m_ObjectHideFlags: 0

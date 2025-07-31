@@ -10,6 +10,8 @@ namespace Code.Scripts.Entities
         
         [SerializeField] private Animator animator;
         
+        public Action OnAnimationEndTrigger;
+        public Action OnDeadEndTrigger;
         public Action OnStartAttackCast;
         public Action OnEndAttackCast;
         public Action OnDamageCastTrigger;
@@ -31,6 +33,16 @@ namespace Code.Scripts.Entities
         public void Initialize(IComponentOwner owner)
         {
             _owner = owner;
+        }
+        
+        private void AnimationEnd()
+        {
+            OnAnimationEndTrigger?.Invoke();
+        }
+        
+        private void OnDeadAnimationEnd()
+        {
+            OnDeadEndTrigger?.Invoke();
         }
         
         #region Animator Parameter Section
