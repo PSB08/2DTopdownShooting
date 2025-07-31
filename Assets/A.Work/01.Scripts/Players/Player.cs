@@ -43,6 +43,12 @@ namespace Code.Scripts.Players
         
         public void ChangeState(string newStateName) => _stateMachine.ChangeState(newStateName);
 
+        public void ChangeHit()
+        {
+            Debug.Log("HITIHt");
+            ChangeState("HIT");
+        }
+        
         public void ChangeDead()
         {
             ChangeState("DEAD");

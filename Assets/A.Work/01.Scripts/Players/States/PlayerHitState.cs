@@ -14,25 +14,22 @@ namespace Code.Scripts.Players.States
             base.Enter();
             _movement.CanManualMovement = false;
         }
-        
+
         public override void Update()
         {
             base.Update();
-            Vector2 moveDir = _player.PlayerInput.MovementKey;
-            
-            if (moveDir.x != 0)
+            if (_isTriggerCall)
             {
-                _unitRoot.localScale = new Vector3(moveDir.x > 0 ? -1 : 1, 1, 1);
-            }
-            
-            if (moveDir.magnitude < _inputThreshold)
                 _player.ChangeState("IDLE");
+            }
         }
 
         public override void Exit()
         {
-            base.Exit();
             _movement.CanManualMovement = true;
+            base.Exit();
         }
+        
+        
     }
 }
