@@ -7,7 +7,7 @@ namespace Code.Scripts.Players
 {
     public class CharacterMovement : MonoBehaviour, IEntityComponent, IAfterInitialize
     {
-        [SerializeField] private StatSO moveSpeedStat;
+        [field: SerializeField] public StatSO moveSpeedStat;
         [SerializeField] private Rigidbody2D rigid2D;
 
         private EntityStat _statCompo;
@@ -17,6 +17,8 @@ namespace Code.Scripts.Players
 
         private float _moveSpeed = 8f;
         private Vector2 _velocity;
+        
+        public float MoveSpeed => _moveSpeed;
         
         public Vector2 Velocity => _velocity;
         private float _verticalVelocity;
