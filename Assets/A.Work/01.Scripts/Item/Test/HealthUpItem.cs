@@ -26,6 +26,8 @@ namespace Code.Scripts.Item.Test
                 _health.CurrentHpIncrease(10);   
             }
             _levelUpItemSO.selectCount++;
+            
+            SizeUp(targetEntity);
         }
         
     }

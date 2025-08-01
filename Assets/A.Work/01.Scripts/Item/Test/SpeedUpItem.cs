@@ -1,5 +1,6 @@
 ﻿using Code.Scripts.Entities;
 using Code.Scripts.Players;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Code.Scripts.Item.Test
@@ -18,6 +19,8 @@ namespace Code.Scripts.Item.Test
 
             statCompo.IncreaseBaseValue(_characterMovement.moveSpeedStat, 0.2f);
             _levelUpItemSO.selectCount++;
+            
+            SizeUp(targetEntity);
         }
         
     }

@@ -14,6 +14,7 @@ namespace Code.Scripts.UI
         [SerializeField] private Color hoverColor = Color.white;
         private Color _originalColor;
 
+        [SerializeField] private bool sizeChange = false;
         [SerializeField] private bool canColorChange = false;
 
         private Vector3 _originalScale;
@@ -32,7 +33,10 @@ namespace Code.Scripts.UI
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            transform.DOScale(_originalScale * targetScale, duration).SetEase(easeType).SetUpdate(true);
+            if (sizeChange)
+            {
+                transform.DOScale(_originalScale * targetScale, duration).SetEase(easeType).SetUpdate(true);
+            }
 
             if (canColorChange && _image != null)
             {
@@ -42,7 +46,10 @@ namespace Code.Scripts.UI
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            transform.DOScale(_originalScale, duration).SetEase(easeType).SetUpdate(true);
+            if (sizeChange)
+            {
+                transform.DOScale(_originalScale, duration).SetEase(easeType).SetUpdate(true);   
+            }
 
             if (canColorChange && _image != null)
             {

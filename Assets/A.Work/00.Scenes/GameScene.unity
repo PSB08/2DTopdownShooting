@@ -601,6 +601,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 0
 --- !u!1 &124007961
 GameObject:
@@ -985,6 +986,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 0
 --- !u!1 &191040589
 GameObject:
@@ -14424,6 +14426,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 0
 --- !u!1 &482700826
 GameObject:
@@ -14610,6 +14613,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 0
 --- !u!1 &494224729
 GameObject:
@@ -128885,6 +128889,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 1
 --- !u!1 &1495017640
 GameObject:
@@ -130338,6 +130343,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 1
 --- !u!1 &1740050169
 GameObject:
@@ -130659,6 +130665,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 1
 --- !u!1 &1804186605
 GameObject:
@@ -131152,6 +131159,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 0
 --- !u!1 &2034650567
 GameObject:
@@ -131302,6 +131310,7 @@ MonoBehaviour:
   duration: 0.2
   easeType: 27
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 1
   canColorChange: 0
 --- !u!1 &2049917935
 GameObject:

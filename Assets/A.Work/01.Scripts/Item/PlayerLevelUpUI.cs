@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Code.Scripts.Entities;
 using Code.Scripts.Players;
 using PSB_Lib.Dependencies;
@@ -62,24 +63,30 @@ namespace Code.Scripts.Item
         private void OnSkillSelected(GameObject selectedUI)
         {
             if (_selectionMade)
-                return; 
+                return;
 
             _selectionMade = true;
             
-            // 여기서 적용 로직 호출
-            LevelUpItem item = selectedUI.gameObject.GetComponent<LevelUpItem>();
+            LevelUpItem item = selectedUI.GetComponent<LevelUpItem>();
             item.ApplyItem(_player);
-            
+
             OnValueChanged?.Invoke();
             
+            StartCoroutine(CloseUIAfterDelay(0.4f)); 
+
+            Time.timeScale = 1;
+            _player.PlayerInput.IsCanAttack = true;
+        }
+
+        private IEnumerator CloseUIAfterDelay(float delay)
+        {
+            yield return new WaitForSecondsRealtime(delay);
+
             foreach (var ui in _activeSkillUIs)
             {
                 Destroy(ui);
             }
             _activeSkillUIs.Clear();
-
-            Time.timeScale = 1;
-            _player.PlayerInput.IsCanAttack = true;
         }
         
         private void Shuffle(List<int> list)

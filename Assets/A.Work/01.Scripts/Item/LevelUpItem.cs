@@ -1,4 +1,5 @@
 ﻿using Code.Scripts.Entities;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,17 @@ namespace Code.Scripts.Item
 
         public virtual void ApplyItem(Entity targetEntity)
         {
+        }
+
+        protected virtual void SizeUp(Entity targetEntity)
+        {
+            Vector3 trans = targetEntity.transform.localScale;
+            
+            transform.DOScale(trans * 1.2f, 0.2f).SetEase(Ease.OutBack).SetUpdate(true)
+                .OnComplete(() =>
+                {
+                    transform.DOScale(trans, 0.2f).SetEase(Ease.OutBack).SetUpdate(true);
+                });
         }
         
     }

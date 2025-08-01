@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 4558430451859443177}
   - component: {fileID: 8214878209811983317}
   - component: {fileID: 7806221732199344620}
+  - component: {fileID: 8481072357281433616}
   m_Layer: 5
   m_Name: HealthItemUI
   m_TagString: Untagged
@@ -292,6 +293,24 @@ MonoBehaviour:
   skillIcon: {fileID: 7497836707229615033}
   skillName: {fileID: 2977623732179553383}
   skillDescription: {fileID: 4322112567847705396}
+--- !u!114 &8481072357281433616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606276091388231749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af750b715c4193af61b3c054b48883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: 1.2
+  duration: 0.2
+  easeType: 27
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+  sizeChange: 0
+  canColorChange: 1
 --- !u!1 &6660819633390019811
 GameObject:
   m_ObjectHideFlags: 0
