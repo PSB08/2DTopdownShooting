@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,17 +21,9 @@ namespace Code.Scripts.UI.InGame
 
         public void OpenUIPanel()
         {
-            Time.timeScale = 0f;
-            _isTransitioning = true;
-            uiPanel.SetActive(true);
-            uiPanel.transform.localScale = Vector3.zero;
-            uiPanel.transform.DOScale(Vector3.one, tweenDuration)
-                .SetEase(Ease.OutBack)
-                .SetUpdate(true)
-                .OnComplete(() =>
-                {
-                    _isTransitioning = false;
-                });
+            if (uiPanel.activeSelf || _isTransitioning) return;
+            
+            StartCoroutine(OpenPanelCoroutine());
         }
 
         public void CloseUIPanel()
@@ -45,6 +38,23 @@ namespace Code.Scripts.UI.InGame
                 {
                     uiPanel.SetActive(false);
                     Time.timeScale = 1f;
+                    _isTransitioning = false;
+                });
+        }
+        
+        private IEnumerator OpenPanelCoroutine()
+        {
+            yield return new WaitForSeconds(0.5f);
+            
+            Time.timeScale = 0f;
+            _isTransitioning = true;
+            uiPanel.SetActive(true);
+            uiPanel.transform.localScale = Vector3.zero;
+            uiPanel.transform.DOScale(Vector3.one, tweenDuration)
+                .SetEase(Ease.OutBack)
+                .SetUpdate(true)
+                .OnComplete(() =>
+                {
                     _isTransitioning = false;
                 });
         }

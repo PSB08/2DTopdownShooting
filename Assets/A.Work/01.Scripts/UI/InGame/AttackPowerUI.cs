@@ -1,19 +1,23 @@
 ﻿using System;
+using Code.Scripts.Entities;
 using Code.Scripts.Players.States;
 using TMPro;
 using UnityEngine;
 
 namespace Code.Scripts.UI.InGame
 {
-    public class AttackPowerUI : MonoBehaviour
+    public class AttackPowerUI : MonoBehaviour, IEntityComponent
     {
         [SerializeField] private TextMeshProUGUI damageText;
 
+        private Entity _entity;
+        
         private PlayerAttackCompo _attackCompo;
         
-        private void Awake()
+        public void Initialize(Entity entity)
         {
-            _attackCompo = GetComponent<PlayerAttackCompo>();
+            _entity = entity;
+            _attackCompo = entity.GetCompo<PlayerAttackCompo>();
         }
 
         private void Update()

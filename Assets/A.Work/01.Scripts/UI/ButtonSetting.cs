@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Code.Scripts.UI
 {
-    public class ButtonScale : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class ButtonSetting : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private float targetScale = 1.2f;
         [SerializeField] private float duration = 0.2f;

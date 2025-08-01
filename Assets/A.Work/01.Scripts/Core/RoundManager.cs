@@ -46,9 +46,6 @@ namespace Code.Scripts.Core
             }
         }
         
-        /// <summary>
-        /// 외부에서 실행할 RoundManager 메서드
-        /// </summary>
         public void NotifyRoundEventFinished()
         {
             if (!_waitEvent) return;

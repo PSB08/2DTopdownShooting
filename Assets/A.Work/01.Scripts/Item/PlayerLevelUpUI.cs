@@ -66,7 +66,7 @@ namespace Code.Scripts.Item
 
             _selectionMade = true;
             
-            // 여기서 적용 로직 호출 가능
+            // 여기서 적용 로직 호출
             LevelUpItem item = selectedUI.gameObject.GetComponent<LevelUpItem>();
             item.ApplyItem(_player);
             

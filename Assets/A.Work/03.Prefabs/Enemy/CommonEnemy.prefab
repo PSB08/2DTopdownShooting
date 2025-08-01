@@ -1205,15 +1205,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Graph: {fileID: -8411602588035489723, guid: 88657935ceae3b34fbf3cba16d69339f, type: 2}
   m_BlackboardVariableOverridesList:
-  - rid: 2909550999150002507
-  - rid: 2909551066443415650
-  - rid: 2909551088879534472
+  - rid: 2909551475834748928
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
     version: 2
     RefIds:
-    - rid: 2909550999150002507
+    - rid: 2909551475834748928
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
@@ -1221,22 +1219,6 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 1934225629983306624}
-    - rid: 2909551066443415650
-      type: {class: 'BlackboardVariable`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 10425652964943311904
-          m_Value1: 17409140863925610215
-        Name: Target
-        m_Value: {fileID: 0}
-    - rid: 2909551088879534472
-      type: {class: 'BlackboardVariable`1[[UnityEngine.Transform, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 6126792116550040380
-          m_Value1: 13789364880768352185
-        Name: Nexus
-        m_Value: {fileID: 0}
 --- !u!114 &5693883034675106876
 MonoBehaviour:
   m_ObjectHideFlags: 0

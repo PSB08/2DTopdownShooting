@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Code.Scripts.UI.InGame;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Code.Scripts.UI.Title
 {
-    public class TitleManager : MonoBehaviour
+    public class TitleManager : MonoBehaviour, IUIManager
     {
         [SerializeField] private Button startBtn;
         [SerializeField] private Button settingBtn;
@@ -24,8 +25,7 @@ namespace Code.Scripts.UI.Title
         [SerializeField] private float tweenDuration = 0.3f;
         private bool _isTransitioning = false;
 
-
-        private void Awake()
+        public void Awake()
         {
             Time.timeScale = 1f;
             soundUIPanel.SetActive(false);
@@ -52,7 +52,7 @@ namespace Code.Scripts.UI.Title
 #endif
         }
 
-        public void SettingGame()
+        public void OpenUIPanel()
         {
             if (_isTransitioning) return;
 
@@ -65,8 +65,8 @@ namespace Code.Scripts.UI.Title
                 .SetUpdate(true)
                 .OnComplete(() => _isTransitioning = false);
         }
-        
-        public void CloseSettingUIPanel()
+
+        public void CloseUIPanel()
         {
             if (!soundUIPanel.activeSelf || _isTransitioning) return;
 
@@ -81,6 +81,7 @@ namespace Code.Scripts.UI.Title
                     _isTransitioning = false;
                 });
         }
-
+        
+        
     }
 }

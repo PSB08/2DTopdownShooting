@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.Scripts.UI.InGame
 {
-    public class SettingSetManager : MonoBehaviour
+    public class SettingSetManager : MonoBehaviour, IUIManager
     {
         [SerializeField] private GameObject settingPanel;
         [SerializeField] private SoundSetManager soundSetManager;
@@ -12,7 +12,7 @@ namespace Code.Scripts.UI.InGame
         private bool _isOpen;
         private bool _isTransitioning;
 
-        private void Awake()
+        public void Awake()
         {
             Time.timeScale = 1f;
             settingPanel.SetActive(false);
@@ -35,11 +35,11 @@ namespace Code.Scripts.UI.InGame
 
         private void ToggleSettingPanel()
         {
-            if (_isOpen) CloseSettingPanel();
-            else OpenSettingPanel();
+            if (_isOpen) CloseUIPanel();
+            else OpenUIPanel();
         }
-
-        public void OpenSettingPanel()
+        
+        public void OpenUIPanel()
         {
             if (_isTransitioning) return;
 
@@ -57,7 +57,7 @@ namespace Code.Scripts.UI.InGame
                 });
         }
 
-        public void CloseSettingPanel()
+        public void CloseUIPanel()
         {
             if (!settingPanel.activeSelf || _isTransitioning) return;
 
@@ -73,7 +73,7 @@ namespace Code.Scripts.UI.InGame
                     _isOpen = false;
                 });
         }
-        
+
         
     }
 }

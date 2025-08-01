@@ -45,7 +45,6 @@ namespace Code.Scripts.Players
 
         public void ChangeHit()
         {
-            Debug.Log("HITIHt");
             ChangeState("HIT");
         }
         
