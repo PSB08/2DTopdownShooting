@@ -1,4 +1,5 @@
-﻿using Code.Scripts.Entities;
+﻿using System;
+using Code.Scripts.Entities;
 using PSB_Lib.StatSystem;
 using UnityEngine;
 
@@ -6,11 +7,13 @@ namespace Code.Scripts.Combat
 {
     public class EntityHealth : MonoBehaviour, IEntityComponent, IDamageable, IAfterInitialize
     {
+        public Action OnMaxHealthChange;
+        
         private Entity _entity;
         private EntityActionData _actionData;
         private EntityStat _statCompo;
         
-        [SerializeField] private StatSO hpStat;
+        [field: SerializeField] public StatSO hpStat;
         [SerializeField] private float maxHealth; 
         public float currentHealth;
         
@@ -59,6 +62,11 @@ namespace Code.Scripts.Combat
             {
                 currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
             }
+        }
+
+        public void CurrentHpIncrease(float hp)
+        {
+            currentHealth += hp;
         }
 
         

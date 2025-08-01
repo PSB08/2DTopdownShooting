@@ -21,8 +21,14 @@ namespace Code.Scripts.UI.InGame
             _health = entity.GetCompo<EntityHealth>();
         }
 
+        private void OnDestroy()
+        {
+            _health.OnMaxHealthChange -= HealthChange;
+        }
+
         private void Start()
         {
+            _health.OnMaxHealthChange += HealthChange;
             slider.maxValue = _health.MaxHealth;
             hpTxt.text = $"{_health.currentHealth}/{_health.MaxHealth}";
         }
@@ -32,7 +38,11 @@ namespace Code.Scripts.UI.InGame
             slider.value = _health.currentHealth;
             hpTxt.text = $"{_health.currentHealth}/{_health.MaxHealth}";
         }
-        
+
+        private void HealthChange()
+        {
+            slider.maxValue = _health.MaxHealth;
+        }
         
     }
 }

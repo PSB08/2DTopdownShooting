@@ -3138,10 +3138,10 @@ MonoBehaviour:
     overrideValue: 150
   - stat: {fileID: 11400000, guid: aba835fab962cc14d85d1a6e58d1600d, type: 2}
     isUseOverride: 1
-    overrideValue: 1
+    overrideValue: 2
   - stat: {fileID: 11400000, guid: 3f2224ce672ee8d4b91ccb5da9675f02, type: 2}
     isUseOverride: 1
-    overrideValue: 10
+    overrideValue: 30
 --- !u!1 &5257555606352412535
 GameObject:
   m_ObjectHideFlags: 0
