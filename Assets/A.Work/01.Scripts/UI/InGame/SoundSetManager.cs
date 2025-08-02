@@ -42,7 +42,6 @@ namespace Code.Scripts.UI.InGame
                 .SetUpdate(true)
                 .OnComplete(() =>
                 {
-                    Time.timeScale = 1f;
                     uiPanel.SetActive(false);
                     _isTransitioning = false;
                 });

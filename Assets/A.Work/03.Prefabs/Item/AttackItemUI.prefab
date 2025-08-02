@@ -276,7 +276,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4558430451859443177}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8123973787138120750}
+        m_TargetAssemblyTypeName: Code.Scripts.UI.ButtonSetting, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &682721540120715228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +323,14 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 0
   canColorChange: 1
+  hoverSound:
+    ID: 1073741838
+    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
+    <DebugObject>k__BackingField: {fileID: 6606276091388231749}
+  clickSound:
+    ID: 1073741837
+    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
+    <DebugObject>k__BackingField: {fileID: 6606276091388231749}
 --- !u!1 &6660819633390019811
 GameObject:
   m_ObjectHideFlags: 0
