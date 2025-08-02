@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ami.BroAudio;
 using Code.Scripts.UI.InGame;
 using DG.Tweening;
 using UnityEngine;
@@ -24,6 +25,8 @@ namespace Code.Scripts.UI.Title
         [SerializeField] private Vector2 shownPosition = Vector2.zero; 
         [SerializeField] private float tweenDuration = 0.3f;
         private bool _isTransitioning = false;
+
+        [SerializeField] private SoundID popUpSound;
 
         public void Awake()
         {
@@ -57,6 +60,7 @@ namespace Code.Scripts.UI.Title
             if (_isTransitioning) return;
 
             _isTransitioning = true;
+            BroAudio.Play(popUpSound);
             var rect = soundUIPanel.transform as RectTransform;
             rect.anchoredPosition = hiddenPosition;
             soundUIPanel.SetActive(true);

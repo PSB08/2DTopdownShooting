@@ -1165,6 +1165,10 @@ MonoBehaviour:
   hiddenPosition: {x: 0, y: 1000}
   shownPosition: {x: 0, y: 0}
   tweenDuration: 0.3
+  popUpSound:
+    ID: 1073741839
+    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
+    <DebugObject>k__BackingField: {fileID: 660279987}
 --- !u!1 &738688394
 GameObject:
   m_ObjectHideFlags: 0

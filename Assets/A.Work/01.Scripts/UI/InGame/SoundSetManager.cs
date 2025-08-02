@@ -49,7 +49,7 @@ namespace Code.Scripts.UI.InGame
 
         public bool IsOpen()
         {
-            return uiPanel.activeSelf && !_isTransitioning;
+            return uiPanel.activeSelf && !_isTransitioning;  
         }
 
         
