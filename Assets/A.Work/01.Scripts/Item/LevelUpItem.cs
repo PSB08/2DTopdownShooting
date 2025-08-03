@@ -1,4 +1,5 @@
-﻿using Code.Scripts.Entities;
+﻿using Ami.BroAudio;
+using Code.Scripts.Entities;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -8,13 +9,17 @@ namespace Code.Scripts.Item
 {
     public abstract class LevelUpItem : MonoBehaviour
     {
+        [Header("SO")]
         [SerializeField] protected LevelUpItemSO _levelUpItemSO;
         
+        [Header("Skill")]
         [SerializeField] protected Image skillIcon;
         [SerializeField] protected TextMeshProUGUI skillName;
         [SerializeField] protected TextMeshProUGUI skillDescription;
-
         [SerializeField] protected float changeValue;
+        
+        [Header("Audio")]
+        [SerializeField] private SoundID selectSound;
 
         private void Awake()
         {
@@ -36,6 +41,11 @@ namespace Code.Scripts.Item
                 {
                     transform.DOScale(trans, 0.2f).SetEase(Ease.OutBack).SetUpdate(true);
                 });
+        }
+
+        public void PlaySound()
+        {
+            BroAudio.Play(selectSound);
         }
         
     }

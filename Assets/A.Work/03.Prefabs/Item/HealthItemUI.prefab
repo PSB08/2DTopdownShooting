@@ -277,9 +277,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8481072357281433616}
-        m_TargetAssemblyTypeName: Code.Scripts.UI.ButtonSetting, Assembly-CSharp
-        m_MethodName: PlayClickSound
+      - m_Target: {fileID: 7806221732199344620}
+        m_TargetAssemblyTypeName: Code.Scripts.Item.LevelUpItem, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -306,6 +306,10 @@ MonoBehaviour:
   skillName: {fileID: 2977623732179553383}
   skillDescription: {fileID: 4322112567847705396}
   changeValue: 10
+  selectSound:
+    ID: 1073741843
+    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
+    <DebugObject>k__BackingField: {fileID: 6606276091388231749}
 --- !u!114 &8481072357281433616
 MonoBehaviour:
   m_ObjectHideFlags: 0

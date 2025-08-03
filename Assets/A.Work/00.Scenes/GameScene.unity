@@ -127595,7 +127595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0652c723724449db010c90489ec2348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRound: 2
+  maxRound: 15
   baseSpawnCount: 2
   countdownSeconds: 3
   startRoundSound:
