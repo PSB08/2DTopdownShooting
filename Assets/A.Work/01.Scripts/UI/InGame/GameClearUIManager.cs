@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Ami.BroAudio;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,8 @@ namespace Code.Scripts.UI.InGame
         
         [SerializeField] private float tweenDuration = 0.3f;
         private bool _isTransitioning = false;
+        
+        [SerializeField] private SoundID gameClearSound;
 
         public void Awake()
         {
@@ -45,6 +48,9 @@ namespace Code.Scripts.UI.InGame
         private IEnumerator OpenPanelCoroutine()
         {
             yield return new WaitForSeconds(0.5f);
+            //사운드
+            BroAudio.Stop(BroAudioType.Music);
+            BroAudio.Play(gameClearSound);
             
             Time.timeScale = 0f;
             _isTransitioning = true;

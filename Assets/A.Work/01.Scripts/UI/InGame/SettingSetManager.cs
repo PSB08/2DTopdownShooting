@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using Ami.BroAudio;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Code.Scripts.UI.InGame
@@ -11,6 +12,8 @@ namespace Code.Scripts.UI.InGame
         [SerializeField] private float tweenDuration = 0.3f;
         private bool _isOpen;
         private bool _isTransitioning;
+        
+        [SerializeField] private SoundID openSound;
 
         public void Awake()
         {
@@ -42,7 +45,9 @@ namespace Code.Scripts.UI.InGame
         public void OpenUIPanel()
         {
             if (_isTransitioning) return;
-
+            //사ㅏ운드
+            BroAudio.Play(openSound);
+            
             Time.timeScale = 0f;
             _isTransitioning = true;
             settingPanel.SetActive(true);

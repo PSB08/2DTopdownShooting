@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Ami.BroAudio;
 using Code.Scripts.Enemies;
 using PSB_Lib.Dependencies;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace Code.Scripts.Core
         [SerializeField] private int baseSpawnCount = 2;
         [SerializeField] private float countdownSeconds = 3f;
         
+        [SerializeField] private SoundID startRoundSound;
         
         [Inject] private EnemySpawner enemySpawner;
 
@@ -72,6 +74,8 @@ namespace Code.Scripts.Core
         private void StartNextRound()
         {
             int spawnCount = baseSpawnCount + CurrentRound;
+            //사운드
+            BroAudio.Play(startRoundSound);
             enemySpawner.SetSpawnCount(spawnCount);
             enemySpawner.SpawnEnemies();
         }

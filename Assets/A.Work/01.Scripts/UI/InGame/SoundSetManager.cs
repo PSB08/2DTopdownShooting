@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using Ami.BroAudio;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Code.Scripts.UI.InGame
@@ -10,6 +11,8 @@ namespace Code.Scripts.UI.InGame
         [SerializeField] private Vector2 shownPosition = Vector2.zero; 
         [SerializeField] private float tweenDuration = 0.3f;
         private bool _isTransitioning = false;
+        
+        [SerializeField] private SoundID openSound;
 
         public void Awake()
         {
@@ -20,6 +23,8 @@ namespace Code.Scripts.UI.InGame
         {
             Time.timeScale = 0f;
             if (_isTransitioning) return;
+            //사운드
+            BroAudio.Play(openSound);
 
             _isTransitioning = true;
             var rect = uiPanel.transform as RectTransform;
