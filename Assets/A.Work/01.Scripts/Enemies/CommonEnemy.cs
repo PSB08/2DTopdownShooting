@@ -15,6 +15,12 @@ namespace Code.Scripts.Enemies
         private void Start()
         {
             _stateChannel = GetBlackboardVariable<StateChange>("StateChange").Value;
+            EntityRenderer.OnDeadEndTrigger += DestroyObject;
+        }
+
+        private void OnDestroy()
+        {
+            EntityRenderer.OnDeadEndTrigger -= DestroyObject;
         }
 
         private void OnDrawGizmos()
@@ -25,10 +31,16 @@ namespace Code.Scripts.Enemies
             Gizmos.DrawWireSphere(transform.position, AttackRadius);
         }
 
-        public void DestroyObject()
+        private void DestroyObject()
         {
             Destroy(gameObject);
         }
+
+        public void ChangeDead()
+        {
+            _stateChannel.SendEventMessage(EnemyState.DEAD);
+        }
+        
         
     }
 }

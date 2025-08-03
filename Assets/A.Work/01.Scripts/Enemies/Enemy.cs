@@ -14,6 +14,7 @@ namespace Code.Scripts.Enemies
         protected Dictionary<Type, IBtEntityComponent> _compoDict;
         
         public BehaviorGraphAgent BtAgent { get; private set; }
+        protected EntityRenderer EntityRenderer;
 
         private void Awake()
         {
@@ -26,6 +27,7 @@ namespace Code.Scripts.Enemies
 
         protected void AddComponents()
         {
+            EntityRenderer = GetCompo<EntityRenderer>();
             BtAgent = GetComponent<BehaviorGraphAgent>();
             Debug.Assert(BtAgent != null, $"{gameObject.name} don't have BehaviorGraphAgent");
         }

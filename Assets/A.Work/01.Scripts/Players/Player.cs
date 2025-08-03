@@ -34,11 +34,6 @@ namespace Code.Scripts.Players
         private void Update()
         {
             _stateMachine.UpdateStateMachine();
-
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                _stateMachine.ChangeState("HIT");
-            }
         }
         
         public void ChangeState(string newStateName) => _stateMachine.ChangeState(newStateName);

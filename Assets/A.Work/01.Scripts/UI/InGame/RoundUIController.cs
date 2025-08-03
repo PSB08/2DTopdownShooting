@@ -49,6 +49,12 @@ namespace Code.Scripts.UI.InGame
         
         public void NextRoundUI()
         {
+            StartCoroutine(NextRoundUICoroutine());
+        }
+
+        private IEnumerator NextRoundUICoroutine()
+        {
+            yield return new WaitForSeconds(0.7f);
             playerLevelUpUI.HandleLevelUpUIShow();
         }
         

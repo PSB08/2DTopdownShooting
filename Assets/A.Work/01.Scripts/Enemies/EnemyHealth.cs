@@ -35,9 +35,11 @@ namespace Code.Scripts.Enemies
             _actionData.HitNormal = hitNormal;
 
             currentHealth = Mathf.Clamp(currentHealth - damageData.damage, 0, maxHealth);
+            
             if (currentHealth <= 0)
             {
                 OnDeadEvent?.Invoke();
+                return;
             }
             
             OnHitEvent?.Invoke();

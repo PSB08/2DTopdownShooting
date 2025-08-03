@@ -2193,7 +2193,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 709383471547547098}
         m_TargetAssemblyTypeName: Code.Scripts.Enemies.CommonEnemy, Assembly-CSharp
-        m_MethodName: DestroyObject
+        m_MethodName: ChangeDead
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
