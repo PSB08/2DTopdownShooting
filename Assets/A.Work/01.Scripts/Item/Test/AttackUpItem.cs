@@ -19,9 +19,7 @@ namespace Code.Scripts.Item.Test
                 return;
             }
 
-            Debug.Log("AttackItemSelected!!");
-
-            statCompo.IncreaseBaseValue(_attackCompo.damageStat, 10);
+            statCompo.IncreaseBaseValue(_attackCompo.damageStat, changeValue);
             _levelUpItemSO.selectCount++;
             
             SizeUp(targetEntity);

@@ -1,4 +1,6 @@
-﻿using Unity.Behavior;
+﻿using System;
+using Code.Scripts.Enemies.BT.Events;
+using Unity.Behavior;
 using UnityEngine;
 
 namespace Code.Scripts.Enemies
@@ -7,12 +9,12 @@ namespace Code.Scripts.Enemies
     {
         [field: SerializeField] public float DetectRadius { get; private set; } = 8f;
         [field: SerializeField] public float AttackRadius { get; private set; } = 1.5f;
-        public BehaviorGraphAgent BtAgent { get; private set; }
+        
+        private StateChange _stateChannel;
 
-        protected override void InitializeCompos()
+        private void Start()
         {
-            base.InitializeCompos();
-            BtAgent = GetComponent<BehaviorGraphAgent>();
+            _stateChannel = GetBlackboardVariable<StateChange>("StateChange").Value;
         }
 
         private void OnDrawGizmos()

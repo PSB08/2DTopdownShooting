@@ -15,9 +15,8 @@ namespace Code.Scripts.Item.Test
             var statCompo = targetEntity.GetCompo<EntityStat>();
             if (statCompo == null)
                 Debug.LogError("No have attackCompo");
-            Debug.Log("SpeedItemSelected!!");
 
-            statCompo.IncreaseBaseValue(_characterMovement.moveSpeedStat, 0.2f);
+            statCompo.IncreaseBaseValue(_characterMovement.moveSpeedStat, changeValue);
             _levelUpItemSO.selectCount++;
             
             SizeUp(targetEntity);

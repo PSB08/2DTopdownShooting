@@ -14,16 +14,15 @@ namespace Code.Scripts.Item.Test
             var statCompo = targetEntity.GetCompo<EntityStat>();
             if (statCompo == null)
                 Debug.LogError("No have attackCompo");
-            Debug.Log("SpeedItemSelected!!");
 
             if (_health.currentHealth >= 100)
             {
-                statCompo.IncreaseBaseValue(_health.hpStat, 10);
+                statCompo.IncreaseBaseValue(_health.hpStat, changeValue);
                 _health.OnMaxHealthChange?.Invoke();
             }
             else
             {
-                _health.CurrentHpIncrease(10);   
+                _health.CurrentHpIncrease(changeValue);   
             }
             _levelUpItemSO.selectCount++;
             

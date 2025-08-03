@@ -305,6 +305,7 @@ MonoBehaviour:
   skillIcon: {fileID: 7497836707229615033}
   skillName: {fileID: 2977623732179553383}
   skillDescription: {fileID: 4322112567847705396}
+  changeValue: 10
 --- !u!114 &8123973787138120750
 MonoBehaviour:
   m_ObjectHideFlags: 0

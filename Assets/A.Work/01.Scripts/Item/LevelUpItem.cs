@@ -14,6 +14,8 @@ namespace Code.Scripts.Item
         [SerializeField] protected TextMeshProUGUI skillName;
         [SerializeField] protected TextMeshProUGUI skillDescription;
 
+        [SerializeField] protected float changeValue;
+
         private void Awake()
         {
             skillIcon.sprite = _levelUpItemSO.SkillIcon;

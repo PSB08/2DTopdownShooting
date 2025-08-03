@@ -4,6 +4,7 @@ using System.Linq;
 using Code.Scripts.Enemies.BT;
 using Code.Scripts.Entities;
 using PSB_Lib.ObjectPool.RunTime;
+using Unity.Behavior;
 using UnityEngine;
 
 namespace Code.Scripts.Enemies
@@ -11,13 +12,22 @@ namespace Code.Scripts.Enemies
     public abstract class Enemy : MonoBehaviour, IComponentOwner, IPoolable
     {
         protected Dictionary<Type, IBtEntityComponent> _compoDict;
+        
+        public BehaviorGraphAgent BtAgent { get; private set; }
 
         private void Awake()
         {
             _compoDict = GetComponentsInChildren<IBtEntityComponent>(true).ToDictionary(compo => compo.GetType());
 
+            AddComponents();
             InitializeCompos();
             AfterInitializeCompos();
+        }
+
+        protected void AddComponents()
+        {
+            BtAgent = GetComponent<BehaviorGraphAgent>();
+            Debug.Assert(BtAgent != null, $"{gameObject.name} don't have BehaviorGraphAgent");
         }
         
         protected virtual void InitializeCompos()
@@ -49,6 +59,15 @@ namespace Code.Scripts.Enemies
         public IBtEntityComponent GetCompo(Type type)
         {
             return _compoDict.GetValueOrDefault(type);
+        }
+        
+        public BlackboardVariable<T> GetBlackboardVariable<T>(string key)
+        {
+            if (BtAgent.GetVariable(key, out BlackboardVariable<T> result))
+            {
+                return result;
+            }
+            return default;
         }
 
 
