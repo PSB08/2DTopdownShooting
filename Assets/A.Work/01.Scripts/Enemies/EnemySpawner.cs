@@ -41,33 +41,50 @@ namespace Code.Scripts.Enemies
 
                 var over = spawnEnemy.GetCompo<EnemyOverride>();
                 over.SetTargets(player, nexus);
-                
-                var randomPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)];
-                spawnEnemy.transform.position = randomPoint.position;
+
+                Vector3 spawnPos = GetRandomSpawnPosition(1f);
+                spawnEnemy.transform.position = spawnPos;
 
                 _spawnedEnemies.Add(spawnEnemy);
 
-                var health = spawnEnemy.GetComponent<EnemyHealth>();
-                if (health != null)
-                {
-                    UnityAction onDead = null;
-                    onDead = () =>
-                    {
-                        health.OnDeadEvent.RemoveListener(onDead);
-                        _spawnedEnemies.Remove(spawnEnemy);
-
-                        if (_spawnedEnemies.Count == 0)
-                            OnAllEnemiesDead?.Invoke();
-                    };
-                    health.OnDeadEvent.AddListener(onDead);
-                }
-                else
-                {
-                    Debug.LogWarning($"Enemy {spawnEnemy.name}에 EnemyHealth가 없습니다.");
-                }
+                AttachDeathListener(spawnEnemy);
             }
         }
 
+        private Vector3 GetRandomSpawnPosition(float radius)
+        {
+            if (spawnPoints.Length == 0)
+                return Vector3.zero;
+
+            Vector3 basePos = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length)].position;
+
+            Vector3 randomOffset = UnityEngine.Random.insideUnitSphere;
+            randomOffset.y = 0f;
+            randomOffset = randomOffset.normalized * UnityEngine.Random.Range(0f, radius);
+
+            return basePos + randomOffset;
+        }
+
+        private void AttachDeathListener(Enemy enemy)
+        {
+            var health = enemy.GetComponent<EnemyHealth>();
+            if (health == null)
+            {
+                Debug.LogWarning($"Enemy {enemy.name}에 EnemyHealth가 없습니다.");
+                return;
+            }
+
+            UnityAction onDead = null;
+            onDead = () =>
+            {
+                health.OnDeadEvent.RemoveListener(onDead);
+                _spawnedEnemies.Remove(enemy);
+
+                if (_spawnedEnemies.Count == 0)
+                    OnAllEnemiesDead?.Invoke();
+            };
+            health.OnDeadEvent.AddListener(onDead);
+        }
 
         
         
