@@ -1,7 +1,5 @@
 ﻿using System;
 using Code.Scripts.Enemies.BT;
-using Code.Scripts.Nexuses;
-using Code.Scripts.Players;
 using UnityEngine;
 
 namespace Code.Scripts.Enemies

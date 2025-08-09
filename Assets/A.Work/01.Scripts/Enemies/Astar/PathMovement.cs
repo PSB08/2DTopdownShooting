@@ -48,7 +48,7 @@ namespace Code.Scripts.Enemies.Astar
             }
             
             _prevPosition = _owner.Transform.position;
-            _currentPathIndex = 1; // 첫번째 점(내 위치)는 안가고 다음 위치를 감.
+            _currentPathIndex = 1; 
         }
 
         private void Update()
@@ -66,7 +66,7 @@ namespace Code.Scripts.Enemies.Astar
             }
             else
             {
-                _movement.StopImmediately(); // 도착했다면 정지.
+                _movement.StopImmediately();
             }
         }
 
@@ -76,12 +76,12 @@ namespace Code.Scripts.Enemies.Astar
             Vector2 currPos = _owner.Transform.position;
             Vector2 prevDir = (nextGoal - _prevPosition).normalized;
             Vector2 curDir = (nextGoal - currPos).normalized;
-            _prevPosition = currPos; // 갱신
+            _prevPosition = currPos;
 
             if (Vector2.Dot(prevDir, curDir) <= 0 || Vector2.Distance(nextGoal, currPos) < 0.01f)
             {
                 _currentPathIndex++;
-                if (_currentPathIndex >= _totalPathCount) // 도착
+                if (_currentPathIndex >= _totalPathCount)
                 {
                     IsArrived = true;
                     return true;

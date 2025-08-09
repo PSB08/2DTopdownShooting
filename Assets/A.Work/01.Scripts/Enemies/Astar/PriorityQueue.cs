@@ -24,20 +24,19 @@ namespace Code.Scripts.Enemies.Astar
 
         public void Push(T data)
         {
-            heap.Add(data); // 데이터 맨 끝에 새로운 데이터 삽입
+            heap.Add(data); 
             
-            int now = heap.Count - 1; // 삽입한 데이터의 위치
+            int now = heap.Count - 1; 
             while (now > 0)
             {
-                int next = (now - 1) / 2; // 부모 인덱스
-                if(heap[now].CompareTo(heap[next]) < 0) // 비교 했는데 부모가 나보다 작다?
+                int next = (now - 1) / 2; 
+                if(heap[now].CompareTo(heap[next]) < 0) 
                 {
-                    break; // 제 위치 찾았으니 멈춘다.
+                    break; 
                 }
                 
-                // 그렇지 않으면 값 교환
                 (heap[now], heap[next]) = (heap[next], heap[now]);
-                now = next; // 현재 인덱스를 부모였던 것의 인덱스로 바꿔주고 계속 진행.
+                now = next;
             }
         }
 
@@ -45,8 +44,8 @@ namespace Code.Scripts.Enemies.Astar
         {
             T ret = heap[0];
             int lastIdx = heap.Count - 1;
-            heap[0] = heap[lastIdx]; // 마지막 값을 맨 꼭대기로
-            heap.RemoveAt(lastIdx); // 마지막 제거
+            heap[0] = heap[lastIdx];
+            heap.RemoveAt(lastIdx);
             lastIdx--;
 
             int now = 0;
@@ -57,9 +56,9 @@ namespace Code.Scripts.Enemies.Astar
 
                 int next = now;
                 
-                if (left <= lastIdx && heap[next].CompareTo(heap[left]) < 0) // 왼쪽 < 현재
+                if (left <= lastIdx && heap[next].CompareTo(heap[left]) < 0) 
                     next = left;
-                if (right <= lastIdx && heap[next].CompareTo(heap[right]) < 0) // 오른쪽 < 현재 
+                if (right <= lastIdx && heap[next].CompareTo(heap[right]) < 0) 
                     next = right;
 
                 if (next == now)

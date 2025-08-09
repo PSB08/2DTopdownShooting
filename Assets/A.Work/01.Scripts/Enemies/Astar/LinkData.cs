@@ -11,7 +11,7 @@ namespace Code.Scripts.Enemies.Astar
         public Vector3 endPosition;
         public Vector3Int endCellPosition;
 
-        public float cost; // 이 경로의 비용
+        public float cost;
         
     }
 }

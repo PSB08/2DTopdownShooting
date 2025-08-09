@@ -11,7 +11,6 @@ namespace Code.Scripts.Enemies.Astar
         public int GetPath(Vector3Int startPosition, Vector3Int destination, Vector3[] pointArr)
         {
             List<AStarNode> result = CalculatePath(startPosition, destination);
-            // result를 기반으로 pointArr에 넣어준다.
             int cornerIndex = 0;
             if (result.Count > 0)
             {
@@ -31,10 +30,10 @@ namespace Code.Scripts.Enemies.Astar
                         cornerIndex++;
                     }
                 }
-                pointArr[cornerIndex] = result[^1].worldPosition; // 최종 목적지는 수동으로 넣어준다.
+                pointArr[cornerIndex] = result[^1].worldPosition; 
                 cornerIndex++;
             }
-            // pointArr = result.Select(node => node.worldPosition).ToArray();
+            
             return cornerIndex;
         }
 
@@ -63,19 +62,17 @@ namespace Code.Scripts.Enemies.Astar
 
             while (openList.Count > 0)
             {
-                AStarNode currentNode = openList.Pop(); // 가장 F값이 작은 녀석이 나옴
+                AStarNode currentNode = openList.Pop(); 
                 foreach (LinkData link in currentNode.nodeData.neighbours)
                 {
-                    // 해당 노드가 이미 방문한 노드인지 검사.
-                    bool isVisited = closedList.Any(n => n.cellPosition == link.endCellPosition); // Any : Linq식, 조건을 만족하는 놈이 하나라도 있으면 true
-                    if(isVisited) continue; // 이미 방문한 노드면 다음 노드로
+                    bool isVisited = closedList.Any(n => n.cellPosition == link.endCellPosition);
+                    if(isVisited) continue;
                     
                     if(!bakedData.TryGetNode(link.endCellPosition, out NodeData nextNode))
                         continue;
 
                     float newG = link.cost + currentNode.G;
-                    // 이동하려는 노드의 비용과 현재까지 이동한 G값을 더한다.
-
+                    
                     AStarNode nextAStarNode = new AStarNode
                     {
                         nodeData = nextNode,
@@ -92,25 +89,25 @@ namespace Code.Scripts.Enemies.Astar
                     }
                 } // end foreach
                 
-                closedList.Add(currentNode); // 계산이 끝난 노드는 closeNode로 들어감
+                closedList.Add(currentNode);
 
                 if (currentNode.nodeData == endNodeData)
                 {
-                    result = true; // 목적지 도착
+                    result = true; 
                     break;
                 }
             } // end of while
 
             if (result)
             {
-                AStarNode last = closedList[^1]; // 마지막으로 방문한 곳을 시작점으로 잡고 ^1 : 끝에서 첫번째 원소
+                AStarNode last = closedList[^1]; 
                 while (last.parentNode != null)
                 {
                     path.Add(last);
-                    last = last.parentNode; // 쭉 따라서 올라간다.
+                    last = last.parentNode; 
                 }
                 path.Add(last);
-                path.Reverse(); // 순서 역순으로 변경해야 정순이 된다.
+                path.Reverse(); 
             }
 
             return path;

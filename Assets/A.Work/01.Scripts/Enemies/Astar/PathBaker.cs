@@ -35,7 +35,7 @@ namespace Code.Scripts.Enemies.Astar
 
         private void WritePointData()
         {
-            bakedData.ClearPoints(); // 모든 데이터 지우고 다시 적는다.
+            bakedData.ClearPoints();
             groundMap.CompressBounds();
             
             BoundsInt mapBound = groundMap.cellBounds;
@@ -62,7 +62,7 @@ namespace Code.Scripts.Enemies.Astar
                 {
                     for (int y = -1; y <= 1; y++)
                     {
-                        if(x == 0 && y == 0) continue; // 자기 자신
+                        if(x == 0 && y == 0) continue; 
                         
                         Vector3Int nextPoint = new Vector3Int(x, y) + nodeData.cellPosition;
 

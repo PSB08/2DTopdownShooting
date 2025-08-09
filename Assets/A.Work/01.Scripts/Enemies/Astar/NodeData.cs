@@ -7,8 +7,8 @@ namespace Code.Scripts.Enemies.Astar
     [Serializable]
     public struct NodeData
     {
-        public Vector3 worldPosition; // 월드 좌표
-        public Vector3Int cellPosition; // 타일맵 좌표
+        public Vector3 worldPosition; 
+        public Vector3Int cellPosition; 
         public List<LinkData> neighbours;
 
         public NodeData(Vector3 worldPosition, Vector3Int cellPosition)
