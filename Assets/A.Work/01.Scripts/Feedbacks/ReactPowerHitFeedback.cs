@@ -19,7 +19,6 @@ namespace Code.Scripts.Feedbacks
 
         public override void CreateFeedback()
         {
-            Debug.Log("HitFeedback");
             _stateChannel.SendEventMessage(EnemyState.HIT);
         }
 
