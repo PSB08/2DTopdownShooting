@@ -48,28 +48,6 @@ namespace Code.Scripts.Players
             Move();
         }
         
-        #region Temp
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                _statCompo.SetBaseValue(moveSpeedStat, 4f);
-            }
-
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                _statCompo.SetBaseValue(moveSpeedStat, 8f);
-            }
-            
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                _statCompo.SetBaseValue(moveSpeedStat, 12f);
-            }
-        }
-
-        #endregion
-        
         private void HandleMoveSpeedChange(StatSO stat, float currentValue, float prevValue)
         {
             _moveSpeed = currentValue;

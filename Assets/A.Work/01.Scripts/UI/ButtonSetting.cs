@@ -22,7 +22,6 @@ namespace Code.Scripts.UI
         [SerializeField] private bool canColorChange = false;
 
         [Header("Sound")]
-        [SerializeField] private SoundID hoverSound;
         [SerializeField] private SoundID clickSound;
         
         private Vector3 _originalScale;
@@ -50,8 +49,6 @@ namespace Code.Scripts.UI
             {
                 _image.DOColor(hoverColor, duration).SetUpdate(true);
             }
-
-            PlayHoverSound();
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -65,11 +62,6 @@ namespace Code.Scripts.UI
             {
                 _image.DOColor(_originalColor, duration).SetUpdate(true);
             }
-        }
-
-        private void PlayHoverSound()
-        {
-            BroAudio.Play(hoverSound);
         }
 
         public void PlayClickSound()
