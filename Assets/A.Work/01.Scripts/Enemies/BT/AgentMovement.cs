@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace Code.Scripts.Enemies.BT
 {
-    public class AgentMovement : MonoBehaviour, IBtEntityComponent, IAfterInitialize
+    public class AgentMovement : MonoBehaviour, IEntityComponent, IAfterInitialize
     {
         [field: SerializeField] public Rigidbody2D RigidCompo { get; private set; }
         public Vector2 Velocity => RigidCompo.linearVelocity;
@@ -19,17 +19,17 @@ namespace Code.Scripts.Enemies.BT
         [SerializeField] private StatSO moveSpeedStat;
         [SerializeField] private float moveSpeed = 5f;
         
-        private EnemyActionData _actionData;
-        private EnemyStat _statCompo;
+        private EntityActionData _actionData;
+        private EntityStat _statCompo;
         
-        private IComponentOwner _owner;
+        private Entity _entity;
         private Vector2 _moveInput;
         
-        public void Initialize(IComponentOwner owner)
+        public void Initialize(Entity entity)
         {
-            _owner = owner;
-            _actionData = owner.GetCompo<EnemyActionData>();
-            _statCompo = owner.GetCompo<EnemyStat>();
+            _entity = entity;
+            _actionData = entity.GetCompo<EntityActionData>();
+            _statCompo = entity.GetCompo<EntityStat>();
         }
         
         public void AfterInitialize()

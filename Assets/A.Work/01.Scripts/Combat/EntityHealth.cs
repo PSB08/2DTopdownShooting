@@ -70,7 +70,7 @@ namespace Code.Scripts.Combat
         {
             currentHealth += hp;
         }
-
+        
         
     }
 }

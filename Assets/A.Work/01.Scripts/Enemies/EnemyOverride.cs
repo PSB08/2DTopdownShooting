@@ -1,19 +1,18 @@
-﻿using System;
-using Code.Scripts.Enemies.BT;
+﻿using Code.Scripts.Entities;
 using UnityEngine;
 
 namespace Code.Scripts.Enemies
 {
-    public class EnemyOverride : MonoBehaviour, IBtEntityComponent
+    public class EnemyOverride : MonoBehaviour, IEntityComponent
     {
         public Transform _player;
         public Transform _nexus;
 
-        private IComponentOwner _owner;
+        private Entity _entity;
 
-        public void Initialize(IComponentOwner owner)
+        public void Initialize(Entity entity)
         {
-            _owner = owner;
+            _entity = entity;
         }
 
         public void SetTargets(Transform player, Transform nexus)

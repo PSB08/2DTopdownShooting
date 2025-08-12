@@ -1,13 +1,14 @@
 ﻿using System;
 using Code.Scripts.Enemies;
 using Code.Scripts.Enemies.BT.Events;
+using Code.Scripts.Entities;
 using UnityEngine;
 
 namespace Code.Scripts.Feedbacks
 {
     public class ReactPowerHitFeedback : Feedback
     {
-        [SerializeField] private EnemyActionData actionData;
+        [SerializeField] private EntityActionData actionData;
         [SerializeField] private CommonEnemy enemy;
         
         private StateChange _stateChannel;
@@ -24,7 +25,7 @@ namespace Code.Scripts.Feedbacks
 
         public override void StopFeedback()
         {
-            throw new System.NotImplementedException();
+            
         }
         
     }

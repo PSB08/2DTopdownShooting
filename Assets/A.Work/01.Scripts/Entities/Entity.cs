@@ -8,6 +8,7 @@ namespace Code.Scripts.Entities
 {
     public abstract class Entity : MonoBehaviour
     {
+        public Transform Transform => transform;
         public bool IsDead { get; set; }
         public UnityEvent OnHitEvent;
         public UnityEvent OnDeadEvent;

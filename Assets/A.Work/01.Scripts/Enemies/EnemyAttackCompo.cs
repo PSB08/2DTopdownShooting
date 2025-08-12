@@ -6,23 +6,23 @@ using UnityEngine;
 
 namespace Code.Scripts.Enemies
 {
-    public class EnemyAttackCompo : MonoBehaviour, IBtEntityComponent, IAfterInitialize
+    public class EnemyAttackCompo : MonoBehaviour, IEntityComponent, IAfterInitialize
     {
         [Header("Attack Damage")]
         [SerializeField] private StatSO damageStat;
         private float _damage = 5f;
         
-        private IComponentOwner _entity;
-        private EnemyStat _statCompo;
+        private Entity _entity;
+        private EntityStat _statCompo;
         private EnemyDamageCaster _damageCaster;
         private EntityRenderer _animatorRenderer;
         
         private bool isAttacking = false;
         
-        public void Initialize(IComponentOwner owner)
+        public void Initialize(Entity owner)
         {
             _entity = owner;
-            _statCompo = owner.GetCompo<EnemyStat>();
+            _statCompo = owner.GetCompo<EntityStat>();
             _damageCaster = owner.GetCompo<EnemyDamageCaster>();
             _animatorRenderer = owner.GetCompo<EntityRenderer>();
         }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Code.Scripts.Enemies;
-using Code.Scripts.Enemies.BT;
+using Code.Scripts.Entities;
 using Unity.Behavior;
 using Unity.Properties;
 using UnityEngine;
@@ -21,9 +20,9 @@ namespace Code.Scripts.Enemies.BT.Actions
 
             foreach (BlackboardVariable variable in variableList)
             {
-                if (typeof(IBtEntityComponent).IsAssignableFrom(variable.Type) == false) continue;
+                if (typeof(IEntityComponent).IsAssignableFrom(variable.Type) == false) continue;
 
-                IBtEntityComponent targetComponent = Self.Value.GetCompo(variable.Type);
+                IEntityComponent targetComponent = Self.Value.GetCompo(variable.Type);
                 Debug.Assert(targetComponent != null, $"{variable.Name} is not exist on {Self.Value.gameObject.name}");
                 variable.ObjectValue = targetComponent;
             }

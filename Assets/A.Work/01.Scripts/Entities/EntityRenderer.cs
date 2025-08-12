@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Scripts.Entities
 {
-    public class EntityRenderer : MonoBehaviour, IBtEntityComponent
+    public class EntityRenderer : MonoBehaviour, IEntityComponent
     {
         [field: SerializeField]public float FacingDirection { get; private set; } = 1f;
         
@@ -16,7 +16,7 @@ namespace Code.Scripts.Entities
         public Action OnEndAttackCast;
         public Action OnDamageCastTrigger;
         
-        private IComponentOwner _owner;
+        private Entity _entity;
         private AnimParamSO _currClip;
 
         public void ChangeClip(AnimParamSO nextClip)
@@ -30,9 +30,9 @@ namespace Code.Scripts.Entities
             SetParam(_currClip, true);
         }
 
-        public void Initialize(IComponentOwner owner)
+        public void Initialize(Entity entity)
         {
-            _owner = owner;
+            _entity = entity;
         }
         
         private void AnimationEnd()
@@ -68,15 +68,15 @@ namespace Code.Scripts.Entities
         {
             FacingDirection *= -1;
 
-            Vector3 localScale = _owner.Transform.localScale;
+            Vector3 localScale = _entity.Transform.localScale;
             localScale.x = Mathf.Abs(localScale.x) * (FacingDirection > 0 ? 1f : -1f);
-            _owner.Transform.localScale = localScale;
+            _entity.Transform.localScale = localScale;
         }
         
         public void FlipTowardsTarget(Transform target)
         {
             float targetX = target.position.x;
-            float selfX = _owner.Transform.position.x;
+            float selfX = _entity.Transform.position.x;
 
             float xDir = targetX - selfX;
 
@@ -88,7 +88,7 @@ namespace Code.Scripts.Entities
         private void DamageCast() => OnDamageCastTrigger?.Invoke();
         private void StartCast() => OnStartAttackCast?.Invoke();
         private void EndCast() => OnEndAttackCast?.Invoke();
-        
+
         
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Code.Scripts.Enemies.BT.Events;
 using Unity.Behavior;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace Code.Scripts.Enemies
         
         private StateChange _stateChannel;
 
-        private void Start()
+        protected override void Start()
         {
             _stateChannel = GetBlackboardVariable<StateChange>("StateChange").Value;
             EntityRenderer.OnDeadEndTrigger += DestroyObject;
