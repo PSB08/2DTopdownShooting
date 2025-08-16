@@ -615,10 +615,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 0
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 117008917}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
@@ -1020,10 +1016,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 0
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 160355766}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
@@ -14480,10 +14472,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 0
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 473234839}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
@@ -14687,10 +14675,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 0
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 490844166}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
@@ -128995,10 +128979,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 1
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 1488206319}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
@@ -130224,10 +130204,6 @@ MonoBehaviour:
   settingPanel: {fileID: 684570619}
   soundSetManager: {fileID: 1712785931}
   tweenDuration: 0.3
-  openSound:
-    ID: 1073741839
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 1712785928}
 --- !u!114 &1712785931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130244,10 +130220,6 @@ MonoBehaviour:
   hiddenPosition: {x: 0, y: 1000}
   shownPosition: {x: 0, y: 0}
   tweenDuration: 0.3
-  openSound:
-    ID: 1073741839
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 1712785928}
 --- !u!1 &1722994281
 GameObject:
   m_ObjectHideFlags: 0
@@ -130477,10 +130449,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 1
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 1735697298}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
@@ -130819,10 +130787,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 1
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 1756384246}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
@@ -131333,10 +131297,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 0
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 2028592294}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
@@ -131504,10 +131464,6 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   sizeChange: 1
   canColorChange: 0
-  hoverSound:
-    ID: 1073741838
-    _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
-    <DebugObject>k__BackingField: {fileID: 2034650567}
   clickSound:
     ID: 1073741837
     _sourceAsset: {fileID: 11400000, guid: f1f559d668d90fb4bb1c7ceea1020b0f, type: 2}
